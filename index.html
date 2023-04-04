@@ -82,7 +82,7 @@
                         <input class="form_cotrols-elem" type="text" placeholder="Поиск по таблице">
                     </div>
                     <div class="form_cotrols-elem-wrap form_cotrols-filter">
-                        <button class="form_cotrols-elem">Фильтры</button>
+                        <button class="form_cotrols-elem form_cotrols-filter-select">Фильтры</button>
                     </div>
                     <div class="form_cotrols-elem-wrap form_cotrols-load">
                         <button class="form_cotrols-elem form_cotrols-load-select df ai-cn">
@@ -176,9 +176,57 @@
             </table>
         </section>
 
-        <section class="popap_filter df">
-            <div class="popap_filter_option"></div>
-            <div class="popap_filter_list"></div>
+        <section class="popap_filter-wrap">
+            <div class="popap_filter">
+                <div class="popap_filter_option">
+                    <div class="popap_filter_option-elem popap_filter-type">
+                        <h4 class="popap_filter_option-elem-title">Тип</h4>
+                        <div class="popap_filter_option-elem-wrap df
+                        ai-cn">
+                            <button class="popap_filter_option-elem-btn">
+                                Все типы
+                            </button>
+                            <div class="popap_filter_option-elem-search-wrap">
+                                <div class="popap_filter_option-elem-search" id="popap_filter-computer">ПК</div>
+                                <div class="popap_filter_option-elem-search" id="popap_filter-laptop">Ноутбук</div>
+                                <div class="popap_filter_option-elem-search" id="popap_filter-mfp">МФУ</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="popap_filter_option-elem popap_filter-type">
+                        <h4 class="popap_filter_option-elem-title">Подразделение</h4>
+                        <div class="popap_filter_option-elem-wrap df
+                        ai-cn">
+                            <button class="popap_filter_option-elem-btn">
+                                Все подразделения
+                            </button>
+                            <div class="popap_filter_option-elem-search-wrap">
+                                <div class="popap_filter_option-elem-search" id="popap_filter-guide">Руководство</div>
+                                <div class="popap_filter_option-elem-search" id="popap_filter-sales-dep">Отдел продаж</div>
+                                <div class="popap_filter_option-elem-search" id="popap_filter-hr-dep">Отдел кадров</div>
+                                <div class="popap_filter_option-elem-search" id="popap_filter-economic-dep">Экономический отдел</div>
+                                <div class="popap_filter_option-elem-search" id="popap_filter-purchasing-dep">Отдел закупок</div>
+                                <div class="popap_filter_option-elem-search" id="popap_filter-accounting">Бухгалтерия</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="popap_filter_option-elem popap_filter-type">
+                        <h4 class="popap_filter_option-elem-title">Комментарии</h4>
+                        <div class="popap_filter_option-elem-wrap df
+                        ai-cn">
+                            <button class="popap_filter_option-elem-btn">
+                                Все комментарии
+                            </button>
+                            <div class="popap_filter_option-elem-search-wrap">
+                                <div class="popap_filter_option-elem-search" id="popap_filter-not-viewed">Не просмотренные</div>
+                                <div class="popap_filter_option-elem-search" id="popap_filter-with-comments">С комментариями</div>
+                                <div class="popap_filter_option-elem-search" id="popap_filter-without-comments">Без комментариев</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="popap_filter_list"></div>
+            </div>
         </section>
 
     </main>

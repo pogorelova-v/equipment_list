@@ -75,3 +75,9 @@ $('.equipment-check').each(function(){
         $('.equipment-check').eq(indCheck).toggleClass('equipment-check-activ');
     });
 });
+
+//------------------Открыть список фильтров
+
+$('.form_cotrols-filter-select').click(function(){
+    $('.popap_filter-wrap').toggle(300)
+});

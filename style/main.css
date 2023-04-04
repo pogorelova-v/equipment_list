@@ -484,23 +484,74 @@ h1 {
 /*----end equipment_table-wrap----title-equipment-comment*/
 
 
-/*----start popap_filter----*/
+/*----start popap_filter----*/ 
+
+.popap_filter-wrap{
+    display: none;
+}
 .popap_filter{
     position: absolute;
-    top: 50%;
+    display: flex;
+    top: 250px;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     height: 488px;
     background-color: var(--white);
     box-shadow: rgba(10, 22, 58, 0.1) 0 4px 10px;
+    border-radius: 8px;
     z-index: 4;
+    font-size: 14px;
 }
 .popap_filter_option{
     width: 200px;
+    padding: 16px;
 }
 .popap_filter_list{
     width: 358px;
     border-left: 1px solid var(--gray-background);
+}
+.popap_filter_option-elem{
+    width: 168px;
+    margin-bottom: 16px;
+}
+.popap_filter_option-elem-title{
+    font-weight: 600;
+    padding-left: 8px;
+    margin-bottom: 8px;
+}
+.popap_filter_option-elem-btn{
+    border-radius: 8px;
+    height: 32px;
+    width: 100%;
+    padding-left: 8px;
+    font-weight: 300;
+    text-align: left;
+    border: solid 1px var(--gray-background);
+}
+.popap_filter_option-elem-btn{
+    position: relative;
+    border-radius: 8px;
+    height: 32px;
+    width: 100%;
+    padding-left: 8px;
+    font-weight: 300;
+    text-align: left;
+    border: solid 1px var(--gray-background);
+    color: var(--main);
+}
+.popap_filter_option-elem-btn::after{
+    position: absolute;    
+    top: 6px;
+    right: 6px;
+    content: '';
+    width: 20px;
+    height: 20px;
+    background-image: url('../assets/icon/filter_option_arrow.svg');
+    filter: invert(100%);
+    transition: 0.3s all;
+}
+.popap_filter_option-elem-search-wrap{
+    display: none;
 }
 /*----end popap_filter----*/
 
