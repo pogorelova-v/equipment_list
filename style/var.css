@@ -1,0 +1,32 @@
+:root{
+    --chosen-blue : #374264;
+    --white : #ffffff;
+    --black : #1B254A;
+    --accent : #3546E9;
+    --inactive-gray : #C6CBD6;
+    --gray-background : #EFF0F3;
+    --main : #606E8C;
+    --success : #329B0D;
+    --error : #C91919;
+    --check-main : #DFE2E8;
+}
+
+.op{
+    border: 1px solid #88ff00;
+}
+
+.df{
+    display: flex;
+}
+.js-sb{
+    justify-content: space-between;
+}
+.ai-cn{
+    align-items: center;
+}
+.tr-03s{
+    translate: 0.3s all;
+}
+.dn{
+    display: none;
+}

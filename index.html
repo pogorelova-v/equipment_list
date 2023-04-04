@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT-сервис</title>
+    <link rel="stylesheet" href="style/index.css">
+</head>
+
+<body>
+
+    <aside id="aside">
+        <div class="aside_logo df js-sb ai-cn tr-03s">
+            <a class="aside_logo_link" href="javascript:void(0)">
+                <img src="assets/icon/logo.svg" alt="Логотип компании">
+            </a>
+            <button class="aside_logo_close df ai-cn">
+                <img src="assets/icon/long_arrow.svg" alt="Свернуть меню">
+            </button>
+        </div>
+        <nav>
+            <ul class="aside_menu">
+                <li class="aside_menu-elem"><a class="aside_menu-link"
+                        href="javascript:void(0)"><span>Компании</span></a></li>
+                <li class="aside_menu-elem"><a class="aside_menu-link" href="javascript:void(0)"><span>Оплаты</span></a>
+                </li>
+                <li class="aside_menu-elem">
+                    <a class="aside_menu-link aside_submenu-btn"
+                        href="javascript:void(0)"><span>Мои&#160;списки</span></a>
+                    <ul class="aside_submenu">
+                        <li class="aside_submenu-elem"><a class="aside_submenu-link"
+                                href="javascript:void(0)">Оборудование</a></li>
+                        <li class="aside_submenu-elem"><a class="aside_submenu-link" href="javascript:void(0)">ПО</a>
+                        </li>
+                        <li class="aside_submenu-elem"><a class="aside_submenu-link"
+                                href="javascript:void(0)">Услуги</a></li>
+                        <li class="aside_submenu-elem"><a class="aside_submenu-link"
+                                href="javascript:void(0)">Пользователи</a></li>
+                        <li class="aside_submenu-elem"><a class="aside_submenu-link"
+                                href="javascript:void(0)">Поставщики</a></li>
+                    </ul>
+                </li>
+                <li class="aside_menu-elem">
+                    <a class="aside_menu-link aside_submenu-btn" href="javascript:void(0)"><span>Бюджет</span></a>
+                    <ul class="aside_submenu">
+                        <li class="aside_submenu-elem"><a class="aside_submenu-link"
+                                href="javascript:void(0)">Сводная</a></li>
+                        <li class="aside_submenu-elem"><a class="aside_submenu-link"
+                                href="javascript:void(0)">Планирование</a></li>
+                    </ul>
+                </li>
+                <li class="aside_menu-elem"><a class="aside_menu-link"
+                        href="javascript:void(0)"><span>Настройки</span></a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <header id="header">
+        <div class="personal">
+            <a class="personal-link df ai-cn " href="javascript:void(0)">
+                <img class="personal-img" src="assets/icon/person.svg" alt="Аватар">
+                <span class="personal-title">Иванов М. А.</span>
+            </a>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="page_title">
+            <div class="container">
+                <h1>Список оборудования</h1>
+                <p class="h1_subtitle">Здесь вы можете управлять списком вашего оборудования</p>
+            </div>
+        </section>
+
+        <section class="form_cotrols_table">
+            <div class="container">
+                <form class="form_cotrols df ai-cn" action="#">
+                    <div class="form_cotrols-elem-wrap form_cotrols-search">
+                        <input class="form_cotrols-elem" type="text" placeholder="Поиск по таблице">
+                    </div>
+                    <div class="form_cotrols-elem-wrap form_cotrols-filter">
+                        <button class="form_cotrols-elem">Фильтры</button>
+                    </div>
+                    <div class="form_cotrols-elem-wrap form_cotrols-load">
+                        <button class="form_cotrols-elem form_cotrols-load-select df ai-cn">
+                            Загрузить автоматически
+                        </button>
+                        <div class="form_cotrols-load-options">
+                            <div class="form_cotrols-load-options-elem df ai-cn" id="load_auto">Загрузить автоматически</div>
+                            <div class="form_cotrols-load-options-elem df ai-cn" id="load_manually">Добавить в ручную</div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section class="equipment_table-wrap">
+            <table class="equipment_table">
+                <thead class="equipment_table-thead">
+                    <tr  class="equipment_table-thead-tr">
+                        <th class="title-equipment-check"></th>
+                        <th class="title-equipment-name">Наименование</th>
+                        <th class="title-equipment-company">Компания</th>
+                        <th class="title-equipment-type">Тип</th>
+                        <th class="title-equipment-supplier">Поставщик</th>
+                        <th class="title-equipment-division">Подразделение</th>
+                        <th class="title-equipment-user">Пользователь</th>
+                        <th class="title-equipment-number">Серийный номер</th>
+                        <th class="title-equipment-cost">Стоимость за ед.</th>
+                        <th class="title-equipment-analog">Аналоги</th>
+                        <th class="title-equipment-comment"></th>
+                        <th class="title-equipment-done"></th> 
+                    </tr>
+                </thead>
+                <tbody class="equipment_table-tbody">
+                    <tr  class="equipment_table-tbody-tr">
+                        <td class="equipment-check"></td>
+                        <td class="equipment-name"><a href="javascript:void(0)">15.6" Ноутбук HUAWEI MateBook D 477sdvsdddddddddddddd</a></td>
+                        <td class="equipment-company">ООО Глагол Нижний Но.dsvsddd</td>
+                        <td class="equipment-type">ПК</td>
+                        <td class="equipment-supplier">ООО «Волга»zzzzzzzzzzzzzzzzzz</td>
+                        <td class="equipment-division">Руководство</td>
+                        <td class="equipment-user">Иванов М. А.</td>
+                        <td class="equipment-number">7947592849759w444434</td>
+                        <td class="equipment-cost">3 000₽</td>
+                        <td class="equipment-analog">Аналог </td>
+                        <td class="equipment-comment"></td>
+                        <td class="equipment-done"></td>
+                    </tr>
+                    <tr  class="equipment_table-tbody-tr">
+                        <td class="equipment-check"></td>
+                        <td class="equipment-name"><a href="javascript:void(0)">15.6" Ноутбук HUAWEI MateBook D 477sdvsdddddddddddddd</a></td>
+                        <td class="equipment-company">ООО Глагол Нижний Но.dsvsddd</td>
+                        <td class="equipment-type">ПК</td>
+                        <td class="equipment-supplier">ООО «Волга»zzzzzzzzzzzzzzzzzz</td>
+                        <td class="equipment-division">Руководство</td>
+                        <td class="equipment-user">Иванов М. А.</td>
+                        <td class="equipment-number">7947592849759w444434</td>
+                        <td class="equipment-cost">3 000₽</td>
+                        <td class="equipment-analog">Аналог </td>
+                        <td class="equipment-comment equipment-comment-viewed"></td>
+                        <td class="equipment-done"></td>
+                    </tr>
+                    <tr  class="equipment_table-tbody-tr">
+                        <td class="equipment-check"></td>
+                        <td class="equipment-name"><a href="javascript:void(0)">15.6" Ноутбук HUAWEI MateBook D 477sdvsdddddddddddddd</a></td>
+                        <td class="equipment-company">ООО Глагол Нижний Но.dsvsddd</td>
+                        <td class="equipment-type">ПК</td>
+                        <td class="equipment-supplier">ООО «Волга»zzzzzzzzzzzzzzzzzz</td>
+                        <td class="equipment-division">Руководство</td>
+                        <td class="equipment-user">Иванов М. А.</td>
+                        <td class="equipment-number">7947592849759w444434</td>
+                        <td class="equipment-cost">3 000₽</td>
+                        <td class="equipment-analog">Аналог </td>
+                        <td class="equipment-comment"></td>
+                        <td class="equipment-done"></td>
+                    </tr>
+                    <tr  class="equipment_table-tbody-tr">
+                        <td class="equipment-check"></td>
+                        <td class="equipment-name"><a href="javascript:void(0)">15.6" Ноутбук HUAWEI MateBook D 477sdvsdddddddddddddd</a></td>
+                        <td class="equipment-company">ООО Глагол Нижний Но.dsvsddd</td>
+                        <td class="equipment-type">ПК</td>
+                        <td class="equipment-supplier">ООО «Волга»zzzzzzzzzzzzzzzzzz</td>
+                        <td class="equipment-division">Руководство</td>
+                        <td class="equipment-user">Иванов М. А.</td>
+                        <td class="equipment-number">7947592849759w444434</td>
+                        <td class="equipment-cost">3 000₽</td>
+                        <td class="equipment-analog">Аналог </td>
+                        <td class="equipment-comment equipment-comment-unseen"></td> 
+                        <td class="equipment-done"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="popap_filter df">
+            <div class="popap_filter_option"></div>
+            <div class="popap_filter_list"></div>
+        </section>
+
+    </main>
+
+    <footer></footer>
+
+    <script src="script/jquery.js"></script>
+    <script src="script/index.js"></script>
+</body>
+
+</html>
+
