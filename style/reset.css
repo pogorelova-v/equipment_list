@@ -62,3 +62,5 @@ button{
 	font-size: inherit;
 	font-family: inherit;
 }
+
+input {outline:none;}

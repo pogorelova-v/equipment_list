@@ -3,9 +3,11 @@
     --white : #ffffff;
     --black : #1B254A;
     --accent : #3546E9;
+    --accent2 : #8895BB;
     --inactive-gray : #C6CBD6;
     --gray-background : #EFF0F3;
     --main : #606E8C;
+    --main-popap : rgba(96, 110, 140, 0.6);
     --success : #329B0D;
     --error : #C91919;
     --check-main : #DFE2E8;
@@ -21,6 +23,9 @@
 .js-sb{
     justify-content: space-between;
 }
+.js-cn{
+    justify-content: center;
+}
 .ai-cn{
     align-items: center;
 }
@@ -29,4 +34,7 @@
 }
 .dn{
     display: none;
+}
+.tt-cn{
+    text-align: center;
 }
