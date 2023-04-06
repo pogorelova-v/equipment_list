@@ -45,16 +45,27 @@ function asideOpen() {
 
 $('.aside_submenu-btn').each(function(){
     $(this).click(function(){
+        
         let indSubmenuBtn = $('.aside_submenu-btn').index(this);
 
-        if ($('.aside_submenu').eq(indSubmenuBtn).hasClass('sub-open')) {            
-            $('.aside_submenu').eq(indSubmenuBtn).removeClass('sub-open');
-            $('.aside_submenu').eq(indSubmenuBtn).hide(300);
-        } else {          
-            $('.aside_submenu').hide(300);                     
-            $('.aside_submenu').removeClass('sub-open');
-            $('.aside_submenu').eq(indSubmenuBtn).addClass('sub-open');
-            $('.aside_submenu').eq(indSubmenuBtn).show(300);            
+        if ($('#aside').hasClass('aside-close')) {        
+            if ($('.aside_submenu').eq(indSubmenuBtn).hasClass('sub-open')) {            
+                $('.aside_submenu').eq(indSubmenuBtn).removeClass('sub-open');
+                $('.aside_submenu').eq(indSubmenuBtn).hide(300);
+            } else {          
+                $('.aside_submenu').hide(300);                     
+                $('.aside_submenu').removeClass('sub-open');
+                $('.aside_submenu').eq(indSubmenuBtn).addClass('sub-open');
+                $('.aside_submenu').eq(indSubmenuBtn).show(300);            
+            }         
+        } else {
+            if ($('.aside_submenu').eq(indSubmenuBtn).hasClass('sub-open')) {            
+                $('.aside_submenu').eq(indSubmenuBtn).removeClass('sub-open');
+                $('.aside_submenu').eq(indSubmenuBtn).hide(300);
+            } else {          
+                $('.aside_submenu').eq(indSubmenuBtn).addClass('sub-open');
+                $('.aside_submenu').eq(indSubmenuBtn).show(300);            
+            }
         }
     });
 });
@@ -224,3 +235,66 @@ $('.comment-setting-trash-btn').click(function(){
     $('.popap-delete-wrap').fadeIn()
 })
 
+//------------------Открыть закрыть выбор количества отображаемых результатов в таблице, заменить текст
+
+$('.control_showing-opt-activ').click(function(){
+    $('.control_showing-opt-dis').slideToggle();
+
+    $('.control_showing-opt').each(function(){
+        $(this).click(function(){
+            $('.control_showing-opt-activ').text($(this).text());
+            $('.control_showing-opt-dis').slideUp();
+        });
+    });
+});
+
+
+//------------------Выделить все неподтвержденные
+
+$('.all-unconfirme-mark').click(function(){
+
+    $('.comment-settings').each(function(){
+        if(!$(this).hasClass('activ-config')){
+            let indConf =$('.comment-settings').index(this);
+            $('.equipment-check').eq(indConf).addClass('check-box-activ');
+        } ;
+    });
+
+});
+
+//------------------Переключение страниц таблицы
+
+let arrNumberPages = -1;
+$('.control_pages-number').each(function(){
+    arrNumberPages++
+});
+
+$('.control_pages-number-next').click( function() {    
+    controlPagesNumberBtnRight();
+    console.log($('.control_pages-number-arr').position().left);
+});
+
+$('.control_pages-number-prev').click( function() {
+    controlPagesNumberBtnLeft();
+    console.log($('.control_pages-number-arr').position().left);
+});
+
+
+
+function controlPagesNumberBtnRight(){
+    if ($('.control_pages-number-activ').index() != arrNumberPages -1) { 
+        $('.control_pages-number-activ').removeClass('control_pages-number-activ').next($('.control_pages-number')).addClass('control_pages-number-activ');
+    } 
+    if($('.control_pages-number-activ').index() < arrNumberPages -2){
+        $('.control_pages-number-arr').animate({ left: '-=40', }, 300);
+    }
+}
+
+function controlPagesNumberBtnLeft(){    
+    if ($('.control_pages-number-activ').index() != 0) { 
+        $('.control_pages-number-activ').removeClass('control_pages-number-activ').prev($('.control_pages-number')).addClass('control_pages-number-activ');
+    } 
+    if($('.control_pages-number-arr').position().left < 0 ){
+        $('.control_pages-number-arr').animate({ left: '+=40', }, 300);
+    }     
+}
