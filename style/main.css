@@ -3,7 +3,11 @@
 body {
     height: 100%;
     position: relative;
-    display: flex;
+    display: grid;
+    grid-template-columns: min-content auto;
+    grid-template-areas: 
+    'a h'
+    'a m';
     font-family: 'Nunito Sans';
     font-size: 16px;
     overflow-x: hidden;
@@ -11,6 +15,14 @@ body {
 main {
     position: relative;
     flex-grow: 1;
+    grid-area: m;
+}
+aside{
+    grid-area: a ;
+    height: 100%;
+}
+header{
+    grid-area: h;
 }
 
 .blue-btn {
@@ -72,31 +84,7 @@ main {
     background-image: url('../assets/icon/cheked.svg');
 }
 
-.form_search-inp-wrap {
-    position: relative;
-}
 
-.form_search-inp-wrap::after {
-    position: absolute;
-    content: '';
-    width: 24px;
-    height: 24px;
-    top: 50%;
-    transform: translateY(-50%);
-    background-size: contain;
-    pointer-events: none;
-    left: 16px;
-    background-image: url('../assets/icon/search.svg');
-}
-
-.form_search-inp {
-    padding-left: 44px;
-    height: 40px;
-    color: var(--inactive-gray);
-    width: 100%;
-    border-radius: 8px;
-    border: 1px solid var(--inactive-gray);
-}
 
 ::-webkit-scrollbar {
     width: 2px;
@@ -242,7 +230,7 @@ aside {
     background-color: var(--white);
     box-shadow: rgba(10, 22, 58, 0.1) 0 4px 10px;
     color: var(--black);
-    z-index: 2;
+    z-index: 3;
 }
 
 .aside-close .aside_submenu-link {
@@ -268,16 +256,24 @@ aside {
 
 /*-----------------start HEADER------------------*/
 
-
+.personal-wrap{
+    height: 120px;
+    padding: 40px 48px;
+}
+.personal{
+    display: flex;
+    justify-content: end;
+}
 .personal-link {
-    position: absolute;
-    top: 41px;
-    right: 48px;
     font-weight: 600;
     gap: 8px;
     color: var(--black);
     z-index: 300;
     cursor: pointer;
+}
+
+.personal-link:hover{
+    color: var(--accent);
 }
 
 .personal-img {
@@ -302,9 +298,6 @@ aside {
 }
 
 /*----start page_title----*/
-.page_title {
-    margin-top: 120px;
-}
 
 h1 {
     font-size: 26px;
@@ -345,6 +338,22 @@ h1 {
     width: 469px;
 }
 
+.form_cotrols-filter-select{
+    position: relative;
+}
+.form_cotrols-filter-select::after{
+    position: absolute;
+    content: '';
+    width: 24px;
+    height: 24px;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-size: contain;
+    pointer-events: none;
+    background-image: url('../assets/icon/options.svg');
+}
+
 .form_cotrols-filter .form_cotrols-elem {
     text-align: left;
     padding-left: 16px;
@@ -357,14 +366,10 @@ h1 {
     border: 1px solid var(--inactive-gray);
 }
 
-.form_cotrols-search .form_cotrols-elem {
-    padding-left: 48px;
-}
 
 .form_cotrols-load .form_cotrols-elem {
     border-radius: 8px;
     color: var(--white);
-    padding: 0 16px;
     background-color: var(--accent);
     border: none;
     appearance: none;
@@ -385,28 +390,15 @@ h1 {
     pointer-events: none;
 }
 
-.form_cotrols-search.form_cotrols-elem-wrap::after {
-    left: 16px;
-    background-image: url('../assets/icon/search.svg');
-}
-
-.form_cotrols-filter.form_cotrols-elem-wrap::after {
-    right: 16px;
-    background-image: url('../assets/icon/options.svg');
-}
-
-.form_cotrols-load.form_cotrols-elem-wrap::after {
-    right: 16px;
-    background-image: url('../assets/icon/short_arrow.svg');
-}
 
 .form_cotrols-elem::placeholder {
     line-height: 140%;
     color: var(--inactive-gray);
 }
 
-.form_cotrols-load-select {
+.form_cotrols-load-select-btn {
     width: 272px;
+    justify-content: space-between;
     cursor: pointer;
 }
 
@@ -433,6 +425,39 @@ h1 {
     background-color: var(--gray-background);
 }
 
+
+.form_cotrols-search .form_cotrols-elem {
+    padding-left: 48px;
+}
+
+.form_cotrols-search {
+    flex-grow: 1;
+    position: relative;
+}
+
+.form_cotrols-search::after {
+    position: absolute;
+    content: '';
+    width: 24px;
+    height: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-size: contain;
+    pointer-events: none;
+    left: 16px;
+    background-image: url('../assets/icon/search.svg');
+}
+
+.form_search-inp {
+    padding-left: 44px;
+    height: 40px;
+    color: var(--inactive-gray);
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid var(--inactive-gray);
+}
+
+
 /*----end form_cotrols_table----*/
 
 
@@ -443,6 +468,13 @@ h1 {
     padding: 0 48px 29px 48px;
 }
 
+.equipment_table-scroll{
+    display: flex;
+    border: 1px solid #000;
+    flex-grow: 1;
+    width: 100%;
+    overflow-x: scroll;
+}
 .equipment_table {
     flex-grow: 1;
     font-size: 14px;
@@ -459,6 +491,9 @@ h1 {
     justify-content: end;
 }
 
+.equipment_table-tbody-tr a:hover{
+    text-decoration: underline var(--accent) 1px;
+}
 .equipment_table tr {
     position: relative;
     z-index: 1;
@@ -500,29 +535,10 @@ h1 {
 .equipment_table-tbody-tr a {
     color: var(--accent);
 }
-/* 
+
 .equipment_table-tbody-tr-activ{
     background-color: var(--check-main);
-} */
-.equipment_table-tbody-tr-activ::after {
-    position: absolute;
-    content: '';
-    left: -48px;
-    top: -1px;
-    height: 41px;
-    width: 2000px;
-    z-index: -1;
-    background-color: var(--check-main);
 }
-/* .equipment_table-tbody-tr-activ::before {
-    position: absolute;
-    content: '';
-    right: -300px;
-    top: -1px;
-    height: 41px;
-    width: 300px;
-    background-color: var(--check-main);
-} */
 
 .title-equipment-name,
 .equipment-name {
@@ -663,13 +679,15 @@ h1 {
 
 
 /*----start popap_filter----*/
+.popap_filter-block{
+    position: relative;
+}
 
 .popap_filter-wrap {
     display: none;
     position: absolute;
-    top: 250px;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 48px;
+    right: 0;
     border-radius: 8px;
     z-index: 4;
     font-size: 14px;
@@ -782,6 +800,18 @@ h1 {
     border-left: 1px solid var(--gray-background);
 }
 
+
+/* position: absolute;
+content: '';
+width: 24px;
+height: 24px;
+top: 50%;
+transform: translateY(-50%);
+background-size: contain;
+pointer-events: none;
+left: 16px;
+background-image: url('../assets/icon/search.svg'); */
+
 .popap_filter_list {
     margin-top: 26px;
     height: 374px;
@@ -807,10 +837,10 @@ h1 {
 .popap-delete-wrap {
     display: none;
     position: absolute;
-    top: 0;
+    top: -200px;
     left: 0;
+    bottom: 0;
     width: 100%;
-    height: 100vh;
     z-index: 2;
     background-color: var(--main-popap);
 }

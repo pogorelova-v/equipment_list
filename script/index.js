@@ -1,3 +1,4 @@
+
 //-------------------Свернуть развернуть ASIDE, закрыть sub-menu
 
 
@@ -10,7 +11,6 @@ $('.aside_logo_close').click( function(){
                 asideOpen();
             }, 300);         
         } else {
-            submenuCloseClickMain();
             setTimeout(function() { 
                 asideClose();
             }, 300); 
@@ -48,7 +48,6 @@ $('.aside_submenu-btn').each(function(){
         
         let indSubmenuBtn = $('.aside_submenu-btn').index(this);
 
-        if ($('#aside').hasClass('aside-close')) {        
             if ($('.aside_submenu').eq(indSubmenuBtn).hasClass('sub-open')) {            
                 $('.aside_submenu').eq(indSubmenuBtn).removeClass('sub-open');
                 $('.aside_submenu').eq(indSubmenuBtn).hide(300);
@@ -58,30 +57,20 @@ $('.aside_submenu-btn').each(function(){
                 $('.aside_submenu').eq(indSubmenuBtn).addClass('sub-open');
                 $('.aside_submenu').eq(indSubmenuBtn).show(300);            
             }         
-        } else {
-            if ($('.aside_submenu').eq(indSubmenuBtn).hasClass('sub-open')) {            
-                $('.aside_submenu').eq(indSubmenuBtn).removeClass('sub-open');
-                $('.aside_submenu').eq(indSubmenuBtn).hide(300);
-            } else {          
-                $('.aside_submenu').eq(indSubmenuBtn).addClass('sub-open');
-                $('.aside_submenu').eq(indSubmenuBtn).show(300);            
-            }
-        }
+        
     });
 });
 
 //---Закрыть подменю по клику вне, при закрытом ASIDE
 
-function submenuCloseClickMain() {
-    $('main').click(function(){
-        if ($('#aside').hasClass('aside-close')) {      
+
+    $(document).click(function (e){
+        if (!$('aside').is(e.target) && $('aside').has(e.target).length === 0 ) { 
+            
             $('.aside_submenu').removeClass('sub-open');
             $('.aside_submenu').hide(300);
-        } else {
-            return
         }
-    })
-}
+    });
 
 
 //------------------Открыть закрыть выбор способа загрузки, заменить текст
@@ -91,10 +80,20 @@ $('.form_cotrols-load-select').click(function(){
 
     $('.form_cotrols-load-options-elem').each(function(){
         $(this).click(function(){
-            $('.form_cotrols-load-select').text($(this).text());
+            $('.form_cotrols-load-select-text').text($(this).text());
             $('.form_cotrols-load-options').slideUp();
         });
     });
+});
+
+$(document).click(function (e){
+    if (!$('.form_cotrols-load-options-elem').is(e.target) 
+    && $('.form_cotrols-load-options-elem').has(e.target).length === 0 
+    && !$('.form_cotrols-load-select').is(e.target) 
+    && $('.form_cotrols-load-select').has(e.target).length === 0) { 
+        
+        $('.form_cotrols-load-options').slideUp();
+    }
 });
 
 //------------------Выбрать все пункты таблицы
@@ -138,12 +137,15 @@ $('.equipment_table-tbody-tr').each(function(){
 
 $('.form_cotrols-filter-select').click(function(){
 
-    $('.popap_filter-wrap').toggle(300).toggleClass('filter-activ');
+    $('.popap_filter-wrap').slideToggle().toggleClass('filter-activ');
 
     if ($('.popap_filter-wrap').hasClass('filter-activ')) {
         $(document).click(function (e){
-            if (!$('.popap_filter-wrap').is(e.target) && $('.popap_filter-wrap').has(e.target).length === 0 && !$('.form_cotrols-filter-select').is(e.target) && $('.form_cotrols-filter-select').has(e.target).length === 0) { 
-                $('.popap_filter-wrap').hide(300).removeClass('filter-activ')
+            if (!$('.popap_filter-wrap').is(e.target) 
+            && $('.popap_filter-wrap').has(e.target).length === 0 
+            && !$('.form_cotrols-filter-select').is(e.target) 
+            && $('.form_cotrols-filter-select').has(e.target).length === 0) { 
+                $('.popap_filter-wrap').slideUp().removeClass('filter-activ')
             }
         });
     } 
@@ -153,28 +155,20 @@ $('.popap_filter-apply-btn').click(function(){
     $('.popap_filter-wrap').hide(300).removeClass('filter-activ');
 });
 
-//----------------------Открыть подфильтр в попапе фильтров
+//----------------------Открыть закрыть подфильтр в попапе фильтров
 
 $('.popap_filter_option-elem-btn').each(function(){
     $(this).click(function(){
 
-        let indSubFilter = $('.popap_filter_option-elem-btn').index(this);
-        $('.popap_filter_option-elem-search-wrap').eq(indSubFilter).toggleClass('sub-filter-activ').slideToggle()
+        
+        $('.popap_filter_option-elem-search-wrap').removeClass('sub-filter-activ').slideUp()
 
-        // let indSubFilter = $('.popap_filter_option-elem-btn').index(this);
-        // if ($('.popap_filter_option-elem').hasClass('sub-filter-activ')) {
-        //     $(document).click(function (e){
-        //         if (!$('.popap_filter_option-elem').is(e.target) && $('.popap_filter_option-elem').has(e.target).length === 0) { 
-        //             $('.popap_filter_option-elem-search-wrap').slideUp();
-        //             $('.popap_filter_option-elem').removeClass('sub-filter-activ');
-        //         }
-        //     });
-        // } else {
-        //     $('.popap_filter_option-elem-search-wrap').eq(indSubFilter).slideDown();
-        //     $('.popap_filter_option-elem').eq(indSubFilter).addClass('sub-filter-activ')
-        // }
+        let indSubFilter = $('.popap_filter_option-elem-btn').index(this);
+        $('.popap_filter_option-elem-search-wrap').eq(indSubFilter).addClass('sub-filter-activ').slideDown()
+
     });
 });
+
 
 
 
@@ -214,15 +208,10 @@ $('.comment-chat-btn-empty').click(function(){
     $('.popap_comment-wrap').fadeIn();
     $('.popap_comment-not-past').fadeIn();
 })
-$('.comment-chat-btn-viewed').click(function(){
+$('.comment-chat-btn-viewed, .comment-chat-btn-unseen').click(function(){
     $('.popap_comment-wrap').fadeIn();
     $('.popap_comment-past').fadeIn();
 })
-$('.comment-chat-btn-unseen').click(function(){
-    $('.popap_comment-wrap').fadeIn();
-    $('.popap_comment-past').fadeIn();
-})
-
 
 //--------------------------------Открыть закрыть попап удаления элемента
 
@@ -252,49 +241,12 @@ $('.control_showing-opt-activ').click(function(){
 //------------------Выделить все неподтвержденные
 
 $('.all-unconfirme-mark').click(function(){
-
+    $('.equipment-check').removeClass('check-box-activ');
     $('.comment-settings').each(function(){
-        if(!$(this).hasClass('activ-config')){
+        if($(this).hasClass('activ-config')){
             let indConf =$('.comment-settings').index(this);
             $('.equipment-check').eq(indConf).addClass('check-box-activ');
         } ;
     });
 
 });
-
-//------------------Переключение страниц таблицы
-
-let arrNumberPages = -1;
-$('.control_pages-number').each(function(){
-    arrNumberPages++
-});
-
-$('.control_pages-number-next').click( function() {    
-    controlPagesNumberBtnRight();
-    console.log($('.control_pages-number-arr').position().left);
-});
-
-$('.control_pages-number-prev').click( function() {
-    controlPagesNumberBtnLeft();
-    console.log($('.control_pages-number-arr').position().left);
-});
-
-
-
-function controlPagesNumberBtnRight(){
-    if ($('.control_pages-number-activ').index() != arrNumberPages -1) { 
-        $('.control_pages-number-activ').removeClass('control_pages-number-activ').next($('.control_pages-number')).addClass('control_pages-number-activ');
-    } 
-    if($('.control_pages-number-activ').index() < arrNumberPages -2){
-        $('.control_pages-number-arr').animate({ left: '-=40', }, 300);
-    }
-}
-
-function controlPagesNumberBtnLeft(){    
-    if ($('.control_pages-number-activ').index() != 0) { 
-        $('.control_pages-number-activ').removeClass('control_pages-number-activ').prev($('.control_pages-number')).addClass('control_pages-number-activ');
-    } 
-    if($('.control_pages-number-arr').position().left < 0 ){
-        $('.control_pages-number-arr').animate({ left: '+=40', }, 300);
-    }     
-}

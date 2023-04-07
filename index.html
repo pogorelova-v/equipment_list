@@ -57,16 +57,18 @@
         </nav>
     </aside>
 
+   <header class="personal-wrap">
+    <section class="personal">
+        <a class="personal-link df ai-cn tr-03s" href="javascript:void(0)">
+            <div class="personal-img">
+                <img class="personal-avatar" src="assets/icon/person.svg" alt="Аватар">
+            </div>
+            <span class="personal-title">Иванов М. А.</span>
+        </a>
+    </section>
+   </header>
+    
     <main>
-
-        <section class="personal">
-            <a class="personal-link df ai-cn " href="javascript:void(0)">
-                <div class="personal-img">
-                    <img class="personal-avatar" src="assets/icon/person.svg" alt="Аватар">
-                </div>
-                <span class="personal-title">Иванов М. А.</span>
-            </a>
-        </section>
 
         <section class="page_title">
             <div class="container">
@@ -81,14 +83,184 @@
                     <div class="form_cotrols-elem-wrap form_cotrols-search">
                         <input class="form_cotrols-elem" type="text" placeholder="Поиск по таблице">
                     </div>
-                    <div class="form_cotrols-elem-wrap form_cotrols-filter">
-                        <button class="form_cotrols-elem form_cotrols-filter-select">Фильтры</button>
+                    <div class="popap_filter-block">
+                        <div class="form_cotrols-elem-wrap form_cotrols-filter">
+                            <button class="form_cotrols-elem form_cotrols-filter-select">Фильтры</button>
+                        </div>
+                        <section class="popap_filter-wrap">
+                        <div class="popap_filter">
+                            <div class="popap_filter_option">
+                                <div class="popap_filter_option-elem popap_filter-type">
+                                    <h4 class="popap_filter_option-elem-title"><span>Тип</span></h4>
+                                    <div class="popap_filter_option-elem-wrap df
+                                    ai-cn">
+                                        <button class="popap_filter_option-elem-btn">
+                                            <span>Все типы</span>
+                                        </button>
+                                        <ul class="popap_filter_option-elem-search-wrap">
+                                            <li class="popap_filter_option-elem-search" id="popap_filter-computer">
+                                                <button class="popap_filter_option-elem-search-btn check-box"></button>
+                                                <span>ПК</span>
+                                            </li>
+                                            <li class="popap_filter_option-elem-search" id="popap_filter-laptop">
+                                                <button class="popap_filter_option-elem-search-btn check-box"></button>
+                                                <span>Ноутбук</span>
+                                            </li>
+                                            <li class="popap_filter_option-elem-search" id="popap_filter-mfp">
+                                                <button class="popap_filter_option-elem-search-btn check-box"></button>
+                                                <span>МФУ</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="popap_filter_option-elem popap_filter-type">
+                                    <h4 class="popap_filter_option-elem-title"><span>Подразделение</span></h4>
+                                    <div class="popap_filter_option-elem-wrap df
+                                    ai-cn">
+                                        <button class="popap_filter_option-elem-btn">
+                                            <span>Все подразделения</span>
+                                        </button>
+                                        <ul class="popap_filter_option-elem-search-wrap">
+                                            <li class="popap_filter_option-elem-search" id="popap_filter-guide">
+                                                <button class="popap_filter_option-elem-search-btn check-box"></button>
+                                                <span>Руководство</span>
+                                            </li>
+                                            <li class="popap_filter_option-elem-search" id="popap_filter-sales-dep">
+                                                <button class="popap_filter_option-elem-search-btn check-box"></button>
+                                                <span>Отдел продаж</span>
+                                            </li>
+                                            <li class="popap_filter_option-elem-search" id="popap_filter-hr-dep">
+                                                <button class="popap_filter_option-elem-search-btn check-box"></button>
+                                                <span>Отдел кадров</span>
+                                            </li>
+                                            <li class="popap_filter_option-elem-search" id="popap_filter-economic-dep">
+                                                <button class="popap_filter_option-elem-search-btn check-box"></button>
+                                                <span>Экономический отдел</span>
+                                            </li>
+                                            <li class="popap_filter_option-elem-search" id="popap_filter-purchasing-dep">
+                                                <button class="popap_filter_option-elem-search-btn check-box"></button>
+                                                <span>Отдел закупок</span>
+                                            </li>
+                                            <li class="popap_filter_option-elem-search" id="popap_filter-accounting">
+                                                <button class="popap_filter_option-elem-search-btn check-box"></button>
+                                                <span>Бухгалтерия</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="popap_filter_option-elem popap_filter-type">
+                                    <h4 class="popap_filter_option-elem-title"><span>Комментарии</span></h4>
+                                    <div class="popap_filter_option-elem-wrap df
+                                    ai-cn">
+                                        <button class="popap_filter_option-elem-btn">
+                                            <span>Все комментарии</span>
+                                        </button>
+                                        <ul class="popap_filter_option-elem-search-wrap">
+                                            <li class="popap_filter_option-elem-search" id="popap_filter-not-viewed">
+                                                <button class="popap_filter_option-elem-search-btn check-box"></button>
+                                                <span>Не просмотренные</span>
+                                            </li>
+                                            <li class="popap_filter_option-elem-search" id="popap_filter-with-comments">
+                                                <button class="popap_filter_option-elem-search-btn check-box"></button>
+                                                <span> С комментариями</span>
+                                            </li>
+                                            <li class="popap_filter_option-elem-search" id="popap_filter-without-comments">
+                                                <button class="popap_filter_option-elem-search-btn check-box"></button>
+                                                <span>Без комментариев</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="popap_filter_option-elem">
+                                    <button class="popap_filter-apply-btn blue-btn">Применить</button>
+                                </div>
+                                <div class="popap_filter_option-elem">
+                                    <button class="popap_filter-reset-btn blue-link">Сбросить все фильтры</button>
+                                </div>
+                            </div>
+                            <div class="popap_filter_list-wrap">
+                                <div class="popap_filter_list-search form_search-inp-wrap form_cotrols-search">
+                                    <input class="popap_filter_list-inp form_search-inp" type="text"
+                                        placeholder="Поиск по названию">
+                                </div>
+                                <div class="popap_filter_list">
+                                    <ul>
+                                        <li class="popap_filter_list-elem">
+                                            <button class="popap_filter_list-elem-btn check-box"></button>
+                                            <span>ООО Литтера</span>
+                                        </li>
+                                        <li class="popap_filter_list-elem">
+                                            <button class="popap_filter_list-elem-btn check-box"></button>
+                                            <span>ООО Литтера</span>
+                                        </li>
+                                        <li class="popap_filter_list-elem">
+                                            <button class="popap_filter_list-elem-btn check-box"></button>
+                                            <span>ООО Литтера</span>
+                                        </li>
+                                        <li class="popap_filter_list-elem">
+                                            <button class="popap_filter_list-elem-btn check-box"></button>
+                                            <span>ООО Литтера</span>
+                                        </li>
+                                        <li class="popap_filter_list-elem">
+                                            <button class="popap_filter_list-elem-btn check-box"></button>
+                                            <span>ООО Литтера</span>
+                                        </li>
+                                        <li class="popap_filter_list-elem">
+                                            <button class="popap_filter_list-elem-btn check-box"></button>
+                                            <span>ООО Литтера</span>
+                                        </li>
+                                        <li class="popap_filter_list-elem">
+                                            <button class="popap_filter_list-elem-btn check-box"></button>
+                                            <span>ООО Литтера</span>
+                                        </li>
+                                        <li class="popap_filter_list-elem">
+                                            <button class="popap_filter_list-elem-btn check-box"></button>
+                                            <span>ООО Литтера</span>
+                                        </li>
+                                        <li class="popap_filter_list-elem">
+                                            <button class="popap_filter_list-elem-btn check-box"></button>
+                                            <span>ООО Литтера</span>
+                                        </li>
+                                        <li class="popap_filter_list-elem">
+                                            <button class="popap_filter_list-elem-btn check-box"></button>
+                                            <span>ООО Литтера</span>
+                                        </li>
+                                        <li class="popap_filter_list-elem">
+                                            <button class="popap_filter_list-elem-btn check-box"></button>
+                                            <span>ООО Литтера</span>
+                                        </li>
+                                        <li class="popap_filter_list-elem">
+                                            <button class="popap_filter_list-elem-btn check-box"></button>
+                                            <span>ООО Литтера</span>
+                                        </li>
+                                        <li class="popap_filter_list-elem">
+                                            <button class="popap_filter_list-elem-btn check-box"></button>
+                                            <span>ООО Литтера</span>
+                                        </li>
+                                        <li class="popap_filter_list-elem">
+                                            <button class="popap_filter_list-elem-btn check-box"></button>
+                                            <span>ООО Литтера</span>
+                                        </li>
+                                        <li class="popap_filter_list-elem">
+                                            <button class="popap_filter_list-elem-btn check-box"></button>
+                                            <span>ООО Литтера</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        </section>
                     </div>
                     <div class="form_cotrols-elem-wrap form_cotrols-load">
-                        <button class="blue-btn form_cotrols-elem form_cotrols-load-select df ai-cn">
-                            Загрузить автоматически
-                        </button>
-                        <div class="form_cotrols-load-options">
+                        <div class="blue-btn form_cotrols-elem form_cotrols-load-select-btn">
+                            <button class="form_cotrols-load-select-text" > Загрузить автоматически </button>
+                            <button class="form_cotrols-load-select df ai-cn btn-select--js">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.25 8.625L12 15.375L18.75 8.625" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="form_cotrols-load-options btn-option--js">
                             <div class="form_cotrols-load-options-elem df ai-cn" id="load_auto">Загрузить автоматически
                             </div>
                             <div class="form_cotrols-load-options-elem df ai-cn" id="load_manually">Добавить в ручную
@@ -100,180 +272,65 @@
         </section>
 
         <section class="equipment_table-wrap">
-            <table class="equipment_table">
-                <thead class="equipment_table-thead">
-                    <tr class="equipment_table-thead-tr">
-                        <th class="title-equipment-check check-box"></th>
-                        <th class="title-equipment-name">Наименование</th>
-                        <th class="title-equipment-company">Компания</th>
-                        <th class="title-equipment-type">Тип</th>
-                        <th class="title-equipment-supplier">Поставщик</th>
-                        <th class="title-equipment-division">Подразделение</th>
-                        <th class="title-equipment-user">Пользователь</th>
-                        <th class="title-equipment-number">Серийный номер</th>
-                        <th class="title-equipment-cost">Стоимость за ед.</th>
-                        <th class="title-equipment-analog">Аналоги</th>
-                    </tr>
-                </thead>
-                <tbody class="equipment_table-tbody">
-                    <tr class="equipment_table-tbody-tr">
-                        <td class="equipment-check check-box"></td>
-                        <td class="equipment-name"><a href="javascript:void(0)">15.6" Ноутбук HUAWEI MateBook D
-                                477sdvsdsgddddddddddddddddddddd</a></td>
-                        <td class="equipment-company">ООО Глагол Нижний Но.dsvsddd</td>
-                        <td class="equipment-type">ПК</td>
-                        <td class="equipment-supplier">ООО «Волга»zzzzzzzzzzzzzzzzzz</td>
-                        <td class="equipment-division">Руководство</td>
-                        <td class="equipment-user">Иванов М. А.</td>
-                        <td class="equipment-number">7947592849759w444434</td>
-                        <td class="equipment-cost">3 000₽</td>
-                        <td class="equipment-analog">Аналог </td>
-                    </tr>
-                    <tr class="equipment_table-tbody-tr">
-                        <td class="equipment-check check-box"></td>
-                        <td class="equipment-name"><a href="javascript:void(0)">15.6" Ноутбук HUAWEI MateBook D
-                                477sdvsdddddddddddddd</a></td>
-                        <td class="equipment-company">ООО Глагол Нижний Но.dsvsddd</td>
-                        <td class="equipment-type">ПК</td>
-                        <td class="equipment-supplier">ООО «Волга»zzzzzzzzzzzzzzzzzz</td>
-                        <td class="equipment-division">Руководство</td>
-                        <td class="equipment-user">Иванов М. А.</td>
-                        <td class="equipment-number">7947592849759w444434</td>
-                        <td class="equipment-cost">3 000₽</td>
-                        <td class="equipment-analog">Аналог </td>
-                    </tr>
-                    <tr class="equipment_table-tbody-tr">
-                        <td class="equipment-check check-box"></td>
-                        <td class="equipment-name"><a href="javascript:void(0)">15.6" Ноутбук HUAWEI MateBook D
-                                477sdvsdddddddddddddd</a></td>
-                        <td class="equipment-company">ООО Глагол Нижний Но.dsvsddd</td>
-                        <td class="equipment-type">ПК</td>
-                        <td class="equipment-supplier">ООО «Волга»zzzzzzzzzzzzzzzzzz</td>
-                        <td class="equipment-division">Руководство</td>
-                        <td class="equipment-user">Иванов М. А.</td>
-                        <td class="equipment-number">7947592849759w444434</td>
-                        <td class="equipment-cost">3 000₽</td>
-                        <td class="equipment-analog">Аналог </td>
-                    </tr>
-                    <tr class="equipment_table-tbody-tr">
-                        <td class="equipment-check check-box"></td>
-                        <td class="equipment-name"><a href="javascript:void(0)">15.6" Ноутбук HUAWEI MateBook D
-                                477sdvsdddddddddddddd</a></td>
-                        <td class="equipment-company">ООО Глагол Нижний Но.dsvsddd</td>
-                        <td class="equipment-type">ПК</td>
-                        <td class="equipment-supplier">ООО «Волга»zzzzzzzzzzzzzzzzzz</td>
-                        <td class="equipment-division">Руководство</td>
-                        <td class="equipment-user">Иванов М. А.</td>
-                        <td class="equipment-number">7947592849759w444434</td>
-                        <td class="equipment-cost">3 000₽</td>
-                        <td class="equipment-analog">Аналог </td>
-                    </tr>
-                    <tr class="equipment_table-tbody-tr">
-                        <td class="equipment-check check-box"></td>
-                        <td class="equipment-name"><a href="javascript:void(0)">15.6" Ноутбук HUAWEI MateBook D
-                                477sdvsdddddddddddddd</a></td>
-                        <td class="equipment-company">ООО Глагол Нижний Но.dsvsddd</td>
-                        <td class="equipment-type">ПК</td>
-                        <td class="equipment-supplier">ООО «Волга»zzzzzzzzzzzzzzzzzz</td>
-                        <td class="equipment-division">Руководство</td>
-                        <td class="equipment-user">Иванов М. А.</td>
-                        <td class="equipment-number">7947592849759w444434</td>
-                        <td class="equipment-cost">3 000₽</td>
-                        <td class="equipment-analog">Аналог </td>
-                    </tr>
-                    <tr class="equipment_table-tbody-tr">
-                        <td class="equipment-check check-box"></td>
-                        <td class="equipment-name"><a href="javascript:void(0)">15.6" Ноутбук HUAWEI MateBook D
-                                477sdvsdddddddddddddd</a></td>
-                        <td class="equipment-company">ООО Глагол Нижний Но.dsvsddd</td>
-                        <td class="equipment-type">ПК</td>
-                        <td class="equipment-supplier">ООО «Волга»zzzzzzzzzzzzzzzzzz</td>
-                        <td class="equipment-division">Руководство</td>
-                        <td class="equipment-user">Иванов М. А.</td>
-                        <td class="equipment-number">7947592849759w444434</td>
-                        <td class="equipment-cost">3 000₽</td>
-                        <td class="equipment-analog">Аналог </td>
-                    </tr>
-                    <tr class="equipment_table-tbody-tr">
-                        <td class="equipment-check check-box"></td>
-                        <td class="equipment-name"><a href="javascript:void(0)">15.6" Ноутбук HUAWEI MateBook D
-                                477sdvsdddddddddddddd</a></td>
-                        <td class="equipment-company">ООО Глагол Нижний Но.dsvsddd</td>
-                        <td class="equipment-type">ПК</td>
-                        <td class="equipment-supplier">ООО «Волга»zzzzzzzzzzzzzzzzzz</td>
-                        <td class="equipment-division">Руководство</td>
-                        <td class="equipment-user">Иванов М. А.</td>
-                        <td class="equipment-number">7947592849759w444434</td>
-                        <td class="equipment-cost">3 000₽</td>
-                        <td class="equipment-analog">Аналог </td>
-                    </tr>
-                    <tr class="equipment_table-tbody-tr">
-                        <td class="equipment-check check-box"></td>
-                        <td class="equipment-name"><a href="javascript:void(0)">15.6" Ноутбук HUAWEI MateBook D
-                                477sdvsdddddddddddddd</a></td>
-                        <td class="equipment-company">ООО Глагол Нижний Но.dsvsddd</td>
-                        <td class="equipment-type">ПК</td>
-                        <td class="equipment-supplier">ООО «Волга»zzzzzzzzzzzzzzzzzz</td>
-                        <td class="equipment-division">Руководство</td>
-                        <td class="equipment-user">Иванов М. А.</td>
-                        <td class="equipment-number">7947592849759w444434</td>
-                        <td class="equipment-cost">3 000₽</td>
-                        <td class="equipment-analog">Аналог </td>
-                    </tr>
-                    <tr class="equipment_table-tbody-tr">
-                        <td class="equipment-check check-box"></td>
-                        <td class="equipment-name"><a href="javascript:void(0)">15.6" Ноутбук HUAWEI MateBook D
-                                477sdvsdddddddddddddd</a></td>
-                        <td class="equipment-company">ООО Глагол Нижний Но.dsvsddd</td>
-                        <td class="equipment-type">ПК</td>
-                        <td class="equipment-supplier">ООО «Волга»zzzzzzzzzzzzzzzzzz</td>
-                        <td class="equipment-division">Руководство</td>
-                        <td class="equipment-user">Иванов М. А.</td>
-                        <td class="equipment-number">7947592849759w444434</td>
-                        <td class="equipment-cost">3 000₽</td>
-                        <td class="equipment-analog">Аналог </td>
-                    </tr>
-                    <tr class="equipment_table-tbody-tr">
-                        <td class="equipment-check check-box"></td>
-                        <td class="equipment-name"><a href="javascript:void(0)">15.6" Ноутбук HUAWEI MateBook D
-                                477sdvsdddddddddddddd</a></td>
-                        <td class="equipment-company">ООО Глагол Нижний Но.dsvsddd</td>
-                        <td class="equipment-type">ПК</td>
-                        <td class="equipment-supplier">ООО «Волга»zzzzzzzzzzzzzzzzzz</td>
-                        <td class="equipment-division">Руководство</td>
-                        <td class="equipment-user">Иванов М. А.</td>
-                        <td class="equipment-number">7947592849759w444434</td>
-                        <td class="equipment-cost">3 000₽</td>
-                        <td class="equipment-analog">Аналог </td>
-                    </tr>
-                    <tr class="equipment_table-tbody-tr">
-                        <td class="equipment-check check-box"></td>
-                        <td class="equipment-name"><a href="javascript:void(0)">15.6" Ноутбук HUAWEI MateBook D
-                                477sdvsdddddddddddddd</a></td>
-                        <td class="equipment-company">ООО Глагол Нижний Но.dsvsddd</td>
-                        <td class="equipment-type">ПК</td>
-                        <td class="equipment-supplier">ООО «Волга»zzzzzzzzzzzzzzzzzz</td>
-                        <td class="equipment-division">Руководство</td>
-                        <td class="equipment-user">Иванов М. А.</td>
-                        <td class="equipment-number">7947592849759w444434</td>
-                        <td class="equipment-cost">3 000₽</td>
-                        <td class="equipment-analog">Аналог </td>
-                    </tr>
-                    <tr class="equipment_table-tbody-tr">
-                        <td class="equipment-check check-box"></td>
-                        <td class="equipment-name"><a href="javascript:void(0)">15.6" Ноутбук HUAWEI MateBook D
-                                477sdvsdddddddddddddd</a></td>
-                        <td class="equipment-company">ООО Глагол Нижний Но.dsvsddd</td>
-                        <td class="equipment-type">ПК</td>
-                        <td class="equipment-supplier">ООО «Волга»zzzzzzzzzzzzzzzzzz</td>
-                        <td class="equipment-division">Руководство</td>
-                        <td class="equipment-user">Иванов М. А.</td>
-                        <td class="equipment-number">7947592849759w444434</td>
-                        <td class="equipment-cost">3 000₽</td>
-                        <td class="equipment-analog">Аналог </td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="equipment_table-scroll">
+                <table class="equipment_table">
+                    <thead class="equipment_table-thead">
+                        <tr class="equipment_table-thead-tr">
+                            <th class="title-equipment-check check-box"></th>
+                            <th class="title-equipment-name">Наименование</th>
+                            <th class="title-equipment-company">Компания</th>
+                            <th class="title-equipment-type">Тип</th>
+                            <th class="title-equipment-supplier">Поставщик</th>
+                            <th class="title-equipment-division">Подразделение</th>
+                            <th class="title-equipment-user">Пользователь</th>
+                            <th class="title-equipment-number">Серийный номер</th>
+                            <th class="title-equipment-cost">Стоимость за ед.</th>
+                            <th class="title-equipment-analog">Аналоги</th>
+                        </tr>
+                    </thead>
+                    <tbody class="equipment_table-tbody">
+                        <tr class="equipment_table-tbody-tr">
+                            <td class="equipment-check check-box"></td>
+                            <td class="equipment-name"><a href="javascript:void(0)">15.6" Ноутбук HUAWEI MateBook D
+                                    477sdvsdsgddddddddddddddddddddd</a></td>
+                            <td class="equipment-company">ООО Глагол Нижний Но.dsvsddd</td>
+                            <td class="equipment-type">ПК</td>
+                            <td class="equipment-supplier">ООО «Волга»zzzzzzzzzzzzzzzzzz</td>
+                            <td class="equipment-division">Руководство</td>
+                            <td class="equipment-user">Иванов М. А.</td>
+                            <td class="equipment-number">7947592849759w444434</td>
+                            <td class="equipment-cost">3 000₽</td>
+                            <td class="equipment-analog">Аналог </td>
+                        </tr>
+                        <tr class="equipment_table-tbody-tr">
+                            <td class="equipment-check check-box"></td>
+                            <td class="equipment-name"><a href="javascript:void(0)">15.6" Ноутбук HUAWEI MateBook D
+                                    477sdvsdddddddddddddd</a></td>
+                            <td class="equipment-company">ООО Глагол Нижний Но.dsvsddd</td>
+                            <td class="equipment-type">ПК</td>
+                            <td class="equipment-supplier">ООО «Волга»zzzzzzzzzzzzzzzzzz</td>
+                            <td class="equipment-division">Руководство</td>
+                            <td class="equipment-user">Иванов М. А.</td>
+                            <td class="equipment-number">7947592849759w444434</td>
+                            <td class="equipment-cost">3 000₽</td>
+                            <td class="equipment-analog">Аналог </td>
+                        </tr>
+                        <tr class="equipment_table-tbody-tr">
+                            <td class="equipment-check check-box"></td>
+                            <td class="equipment-name"><a href="javascript:void(0)">15.6" Ноутбук HUAWEI MateBook D
+                                    477sdvsdddddddddddddd</a></td>
+                            <td class="equipment-company">ООО Глагол Нижний Но.dsvsddd</td>
+                            <td class="equipment-type">ПК</td>
+                            <td class="equipment-supplier">ООО «Волга»zzzzzzzzzzzzzzzzzz</td>
+                            <td class="equipment-division">Руководство</td>
+                            <td class="equipment-user">Иванов М. А.</td>
+                            <td class="equipment-number">7947592849759w444434</td>
+                            <td class="equipment-cost">3 000₽</td>
+                            <td class="equipment-analog">Аналог </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
             <table class="comment_table">
                 <thead class="comment_table-thead">
                     <tr class="comment_table-thead-tr">
@@ -308,115 +365,7 @@
                         </td>
                     </tr>
                     <tr class="comment_table-tbody-tr">
-                        <td class="comment-chat"><button class="comment-chat-btn comment-chat-btn-empty"></button></td>
-                        <td class="comment-settings activ-config">
-                            <div class="comment-setting-config">
-                                <button class="comment-setting-ok-btn"></button>
-                                <button class="comment-setting-trash-btn"></button>
-                            </div>
-                            <div class="comment-setting-not-config">
-                                <button class="comment-setting-config-btn"></button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="comment_table-tbody-tr">
                         <td class="comment-chat"><button class="comment-chat-btn comment-chat-btn-unseen"></button></td>
-                        <td class="comment-settings">
-                            <div class="comment-setting-config">
-                                <button class="comment-setting-ok-btn"></button>
-                                <button class="comment-setting-trash-btn"></button>
-                            </div>
-                            <div class="comment-setting-not-config">
-                                <button class="comment-setting-config-btn"></button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="comment_table-tbody-tr">
-                        <td class="comment-chat"><button class="comment-chat-btn comment-chat-btn-unseen"></button></td>
-                        <td class="comment-settings">
-                            <div class="comment-setting-config">
-                                <button class="comment-setting-ok-btn"></button>
-                                <button class="comment-setting-trash-btn"></button>
-                            </div>
-                            <div class="comment-setting-not-config">
-                                <button class="comment-setting-config-btn"></button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="comment_table-tbody-tr">
-                        <td class="comment-chat"><button class="comment-chat-btn comment-chat-btn-unseen"></button></td>
-                        <td class="comment-settings">
-                            <div class="comment-setting-config">
-                                <button class="comment-setting-ok-btn"></button>
-                                <button class="comment-setting-trash-btn"></button>
-                            </div>
-                            <div class="comment-setting-not-config">
-                                <button class="comment-setting-config-btn"></button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="comment_table-tbody-tr">
-                        <td class="comment-chat"><button class="comment-chat-btn comment-chat-btn-unseen"></button></td>
-                        <td class="comment-settings">
-                            <div class="comment-setting-config">
-                                <button class="comment-setting-ok-btn"></button>
-                                <button class="comment-setting-trash-btn"></button>
-                            </div>
-                            <div class="comment-setting-not-config">
-                                <button class="comment-setting-config-btn"></button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="comment_table-tbody-tr">
-                        <td class="comment-chat"><button class="comment-chat-btn comment-chat-btn-unseen"></button></td>
-                        <td class="comment-settings">
-                            <div class="comment-setting-config">
-                                <button class="comment-setting-ok-btn"></button>
-                                <button class="comment-setting-trash-btn"></button>
-                            </div>
-                            <div class="comment-setting-not-config">
-                                <button class="comment-setting-config-btn"></button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="comment_table-tbody-tr">
-                        <td class="comment-chat"><button class="comment-chat-btn comment-chat-btn-unseen"></button></td>
-                        <td class="comment-settings">
-                            <div class="comment-setting-config">
-                                <button class="comment-setting-ok-btn"></button>
-                                <button class="comment-setting-trash-btn"></button>
-                            </div>
-                            <div class="comment-setting-not-config">
-                                <button class="comment-setting-config-btn"></button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="comment_table-tbody-tr">
-                        <td class="comment-chat"><button class="comment-chat-btn comment-chat-btn-viewed"></button></td>
-                        <td class="comment-settings">
-                            <div class="comment-setting-config">
-                                <button class="comment-setting-ok-btn"></button>
-                                <button class="comment-setting-trash-btn"></button>
-                            </div>
-                            <div class="comment-setting-not-config">
-                                <button class="comment-setting-config-btn"></button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="comment_table-tbody-tr">
-                        <td class="comment-chat"><button class="comment-chat-btn comment-chat-btn-viewed"></button></td>
-                        <td class="comment-settings">
-                            <div class="comment-setting-config">
-                                <button class="comment-setting-ok-btn"></button>
-                                <button class="comment-setting-trash-btn"></button>
-                            </div>
-                            <div class="comment-setting-not-config">
-                                <button class="comment-setting-config-btn"></button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="comment_table-tbody-tr">
-                        <td class="comment-chat"><button class="comment-chat-btn comment-chat-btn-viewed"></button></td>
                         <td class="comment-settings">
                             <div class="comment-setting-config">
                                 <button class="comment-setting-ok-btn"></button>
@@ -429,170 +378,6 @@
                     </tr>
                 </tbody>
             </table>
-        </section>
-
-        <section class="popap_filter-wrap">
-            <div class="popap_filter">
-                <div class="popap_filter_option">
-                    <div class="popap_filter_option-elem popap_filter-type">
-                        <h4 class="popap_filter_option-elem-title"><span>Тип</span></h4>
-                        <div class="popap_filter_option-elem-wrap df
-                        ai-cn">
-                            <button class="popap_filter_option-elem-btn">
-                                <span>Все типы</span>
-                            </button>
-                            <ul class="popap_filter_option-elem-search-wrap">
-                                <li class="popap_filter_option-elem-search" id="popap_filter-computer">
-                                    <button class="popap_filter_option-elem-search-btn check-box"></button>
-                                    <span>ПК</span>
-                                </li>
-                                <li class="popap_filter_option-elem-search" id="popap_filter-laptop">
-                                    <button class="popap_filter_option-elem-search-btn check-box"></button>
-                                    <span>Ноутбук</span>
-                                </li>
-                                <li class="popap_filter_option-elem-search" id="popap_filter-mfp">
-                                    <button class="popap_filter_option-elem-search-btn check-box"></button>
-                                    <span>МФУ</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="popap_filter_option-elem popap_filter-type">
-                        <h4 class="popap_filter_option-elem-title"><span>Подразделение</span></h4>
-                        <div class="popap_filter_option-elem-wrap df
-                        ai-cn">
-                            <button class="popap_filter_option-elem-btn">
-                                <span>Все подразделения</span>
-                            </button>
-                            <ul class="popap_filter_option-elem-search-wrap">
-                                <li class="popap_filter_option-elem-search" id="popap_filter-guide">
-                                    <button class="popap_filter_option-elem-search-btn check-box"></button>
-                                    <span>Руководство</span>
-                                </li>
-                                <li class="popap_filter_option-elem-search" id="popap_filter-sales-dep">
-                                    <button class="popap_filter_option-elem-search-btn check-box"></button>
-                                    <span>Отдел продаж</span>
-                                </li>
-                                <li class="popap_filter_option-elem-search" id="popap_filter-hr-dep">
-                                    <button class="popap_filter_option-elem-search-btn check-box"></button>
-                                    <span>Отдел кадров</span>
-                                </li>
-                                <li class="popap_filter_option-elem-search" id="popap_filter-economic-dep">
-                                    <button class="popap_filter_option-elem-search-btn check-box"></button>
-                                    <span>Экономический отдел</span>
-                                </li>
-                                <li class="popap_filter_option-elem-search" id="popap_filter-purchasing-dep">
-                                    <button class="popap_filter_option-elem-search-btn check-box"></button>
-                                    <span>Отдел закупок</span>
-                                </li>
-                                <li class="popap_filter_option-elem-search" id="popap_filter-accounting">
-                                    <button class="popap_filter_option-elem-search-btn check-box"></button>
-                                    <span>Бухгалтерия</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="popap_filter_option-elem popap_filter-type">
-                        <h4 class="popap_filter_option-elem-title"><span>Комментарии</span></h4>
-                        <div class="popap_filter_option-elem-wrap df
-                        ai-cn">
-                            <button class="popap_filter_option-elem-btn">
-                                <span>Все комментарии</span>
-                            </button>
-                            <ul class="popap_filter_option-elem-search-wrap">
-                                <li class="popap_filter_option-elem-search" id="popap_filter-not-viewed">
-                                    <button class="popap_filter_option-elem-search-btn check-box"></button>
-                                    <span>Не просмотренные</span>
-                                </li>
-                                <li class="popap_filter_option-elem-search" id="popap_filter-with-comments">
-                                    <button class="popap_filter_option-elem-search-btn check-box"></button>
-                                    <span> С комментариями</span>
-                                </li>
-                                <li class="popap_filter_option-elem-search" id="popap_filter-without-comments">
-                                    <button class="popap_filter_option-elem-search-btn check-box"></button>
-                                    <span>Без комментариев</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="popap_filter_option-elem">
-                        <button class="popap_filter-apply-btn blue-btn">Применить</button>
-                    </div>
-                    <div class="popap_filter_option-elem">
-                        <button class="popap_filter-reset-btn blue-link">Сбросить все фильтры</button>
-                    </div>
-                </div>
-                <div class="popap_filter_list-wrap">
-                    <div class="popap_filter_list-search form_search-inp-wrap">
-                        <input class="popap_filter_list-inp form_search-inp" type="text"
-                            placeholder="Поиск по названию">
-                    </div>
-                    <div class="popap_filter_list">
-                        <ul>
-                            <li class="popap_filter_list-elem">
-                                <button class="popap_filter_list-elem-btn check-box"></button>
-                                <span>ООО Литтера</span>
-                            </li>
-                            <li class="popap_filter_list-elem">
-                                <button class="popap_filter_list-elem-btn check-box"></button>
-                                <span>ООО Литтера</span>
-                            </li>
-                            <li class="popap_filter_list-elem">
-                                <button class="popap_filter_list-elem-btn check-box"></button>
-                                <span>ООО Литтера</span>
-                            </li>
-                            <li class="popap_filter_list-elem">
-                                <button class="popap_filter_list-elem-btn check-box"></button>
-                                <span>ООО Литтера</span>
-                            </li>
-                            <li class="popap_filter_list-elem">
-                                <button class="popap_filter_list-elem-btn check-box"></button>
-                                <span>ООО Литтера</span>
-                            </li>
-                            <li class="popap_filter_list-elem">
-                                <button class="popap_filter_list-elem-btn check-box"></button>
-                                <span>ООО Литтера</span>
-                            </li>
-                            <li class="popap_filter_list-elem">
-                                <button class="popap_filter_list-elem-btn check-box"></button>
-                                <span>ООО Литтера</span>
-                            </li>
-                            <li class="popap_filter_list-elem">
-                                <button class="popap_filter_list-elem-btn check-box"></button>
-                                <span>ООО Литтера</span>
-                            </li>
-                            <li class="popap_filter_list-elem">
-                                <button class="popap_filter_list-elem-btn check-box"></button>
-                                <span>ООО Литтера</span>
-                            </li>
-                            <li class="popap_filter_list-elem">
-                                <button class="popap_filter_list-elem-btn check-box"></button>
-                                <span>ООО Литтера</span>
-                            </li>
-                            <li class="popap_filter_list-elem">
-                                <button class="popap_filter_list-elem-btn check-box"></button>
-                                <span>ООО Литтера</span>
-                            </li>
-                            <li class="popap_filter_list-elem">
-                                <button class="popap_filter_list-elem-btn check-box"></button>
-                                <span>ООО Литтера</span>
-                            </li>
-                            <li class="popap_filter_list-elem">
-                                <button class="popap_filter_list-elem-btn check-box"></button>
-                                <span>ООО Литтера</span>
-                            </li>
-                            <li class="popap_filter_list-elem">
-                                <button class="popap_filter_list-elem-btn check-box"></button>
-                                <span>ООО Литтера</span>
-                            </li>
-                            <li class="popap_filter_list-elem">
-                                <button class="popap_filter_list-elem-btn check-box"></button>
-                                <span>ООО Литтера</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
         </section>
 
         <section class="popap_comment-wrap">
