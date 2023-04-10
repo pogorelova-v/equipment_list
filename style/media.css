@@ -58,6 +58,12 @@
         width: 32px;
     }
 
+    .aside_burg-btn-open,
+    .aside_burg-btn-close {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
     .aside_burg-btn-close {
         display: none;
     }
