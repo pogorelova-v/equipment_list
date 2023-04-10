@@ -13,6 +13,10 @@
 
     <aside id="aside">
         <div class="aside_logo df js-sb ai-cn tr-03s">
+            <button class="aside_burg-btn df ai-cn">
+                <img class="aside_burg-btn-open" src="assets/icon/burg-open.svg" alt="Свернуть меню">
+                <img class="aside_burg-btn-close" src="assets/icon/burg-close.svg" alt="Свернуть меню">
+            </button>
             <a class="aside_logo_link" href="javascript:void(0)">
                 <img src="assets/icon/logo.svg" alt="Логотип компании">
             </a>
@@ -20,7 +24,7 @@
                 <img src="assets/icon/long_arrow.svg" alt="Свернуть меню">
             </button>
         </div>
-        <nav>
+        <nav class="aside_menu-nav">
             <ul class="aside_menu">
                 <li class="aside_menu-elem"><a class="aside_menu-link"
                         href="javascript:void(0)"><span>Компании</span></a></li>
@@ -61,7 +65,9 @@
     <section class="personal">
         <a class="personal-link df ai-cn tr-03s" href="javascript:void(0)">
             <div class="personal-img">
-                <img class="personal-avatar" src="assets/icon/person.svg" alt="Аватар">
+                <svg class="personal-avatar" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2.25C6.62391 2.25 2.25 6.62391 2.25 12C2.25 17.3761 6.62391 21.75 12 21.75C17.3761 21.75 21.75 17.3761 21.75 12C21.75 6.62391 17.3761 2.25 12 2.25ZM9.64594 7.72594C10.2398 7.09641 11.0756 6.75 12 6.75C12.9244 6.75 13.7527 7.09875 14.3489 7.73156C14.9531 8.37281 15.247 9.23437 15.1777 10.1606C15.0389 12 13.6139 13.5 12 13.5C10.3861 13.5 8.95828 12 8.82234 10.1602C8.75344 9.22641 9.04688 8.36203 9.64594 7.72594ZM12 20.25C10.8987 20.2507 9.80838 20.0303 8.79382 19.6018C7.77927 19.1732 6.86109 18.5453 6.09375 17.7553C6.53323 17.1286 7.0932 16.5957 7.74094 16.1878C8.93578 15.4219 10.448 15 12 15C13.552 15 15.0642 15.4219 16.2577 16.1878C16.9059 16.5955 17.4664 17.1284 17.9062 17.7553C17.139 18.5454 16.2208 19.1734 15.2062 19.6019C14.1917 20.0304 13.1014 20.2508 12 20.25Z" fill="#1B254A"/>
+                </svg>                
             </div>
             <span class="personal-title">Иванов М. А.</span>
         </a>
@@ -85,7 +91,12 @@
                     </div>
                     <div class="popap_filter-block">
                         <div class="form_cotrols-elem-wrap form_cotrols-filter">
-                            <button class="form_cotrols-elem form_cotrols-filter-select">Фильтры</button>
+                            <button class="form_cotrols-elem form_cotrols-filter-select">
+                                Фильтры
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 6.75H13.6289C13.7841 7.18852 14.0714 7.56816 14.4512 7.83667C14.8311 8.10518 15.2848 8.24936 15.75 8.24936C16.2152 8.24936 16.6689 8.10518 17.0488 7.83667C17.4286 7.56816 17.7159 7.18852 17.8711 6.75H21C21.1989 6.75 21.3897 6.67098 21.5303 6.53033C21.671 6.38968 21.75 6.19891 21.75 6C21.75 5.80109 21.671 5.61032 21.5303 5.46967C21.3897 5.32902 21.1989 5.25 21 5.25H17.8711C17.7159 4.81148 17.4286 4.43184 17.0488 4.16333C16.6689 3.89482 16.2152 3.75064 15.75 3.75064C15.2848 3.75064 14.8311 3.89482 14.4512 4.16333C14.0714 4.43184 13.7841 4.81148 13.6289 5.25H3C2.80109 5.25 2.61032 5.32902 2.46967 5.46967C2.32902 5.61032 2.25 5.80109 2.25 6C2.25 6.19891 2.32902 6.38968 2.46967 6.53033C2.61032 6.67098 2.80109 6.75 3 6.75ZM21 17.25H17.8711C17.7159 16.8115 17.4286 16.4318 17.0488 16.1633C16.6689 15.8948 16.2152 15.7506 15.75 15.7506C15.2848 15.7506 14.8311 15.8948 14.4512 16.1633C14.0714 16.4318 13.7841 16.8115 13.6289 17.25H3C2.80109 17.25 2.61032 17.329 2.46967 17.4697C2.32902 17.6103 2.25 17.8011 2.25 18C2.25 18.1989 2.32902 18.3897 2.46967 18.5303C2.61032 18.671 2.80109 18.75 3 18.75H13.6289C13.7841 19.1885 14.0714 19.5682 14.4512 19.8367C14.8311 20.1052 15.2848 20.2494 15.75 20.2494C16.2152 20.2494 16.6689 20.1052 17.0488 19.8367C17.4286 19.5682 17.7159 19.1885 17.8711 18.75H21C21.1989 18.75 21.3897 18.671 21.5303 18.5303C21.671 18.3897 21.75 18.1989 21.75 18C21.75 17.8011 21.671 17.6103 21.5303 17.4697C21.3897 17.329 21.1989 17.25 21 17.25ZM21 11.25H10.3711C10.2159 10.8115 9.92861 10.4318 9.54876 10.1633C9.16891 9.89482 8.71517 9.75064 8.25 9.75064C7.78483 9.75064 7.33109 9.89482 6.95124 10.1633C6.57139 10.4318 6.2841 10.8115 6.12891 11.25H3C2.80109 11.25 2.61032 11.329 2.46967 11.4697C2.32902 11.6103 2.25 11.8011 2.25 12C2.25 12.1989 2.32902 12.3897 2.46967 12.5303C2.61032 12.671 2.80109 12.75 3 12.75H6.12891C6.2841 13.1885 6.57139 13.5682 6.95124 13.8367C7.33109 14.1052 7.78483 14.2494 8.25 14.2494C8.71517 14.2494 9.16891 14.1052 9.54876 13.8367C9.92861 13.5682 10.2159 13.1885 10.3711 12.75H21C21.1989 12.75 21.3897 12.671 21.5303 12.5303C21.671 12.3897 21.75 12.1989 21.75 12C21.75 11.8011 21.671 11.6103 21.5303 11.4697C21.3897 11.329 21.1989 11.25 21 11.25Z" fill="#C6CBD6"/>
+                                </svg>
+                            </button>
                         </div>
                         <section class="popap_filter-wrap">
                         <div class="popap_filter">
@@ -271,6 +282,7 @@
             </div>
         </section>
 
+
         <section class="equipment_table-wrap">
             <div class="equipment_table-scroll">
                 <table class="equipment_table">
@@ -328,56 +340,238 @@
                             <td class="equipment-cost">3 000₽</td>
                             <td class="equipment-analog">Аналог </td>
                         </tr>
+                        <tr class="equipment_table-tbody-tr">
+                            <td class="equipment-check check-box"></td>
+                            <td class="equipment-name"><a href="javascript:void(0)">15.6" Ноутбук HUAWEI MateBook D
+                                    477sdvsdddddddddddddd</a></td>
+                            <td class="equipment-company">ООО Глагол Нижний Но.dsvsddd</td>
+                            <td class="equipment-type">ПК</td>
+                            <td class="equipment-supplier">ООО «Волга»zzzzzzzzzzzzzzzzzz</td>
+                            <td class="equipment-division">Руководство</td>
+                            <td class="equipment-user">Иванов М. А.</td>
+                            <td class="equipment-number">7947592849759w444434</td>
+                            <td class="equipment-cost">3 000₽</td>
+                            <td class="equipment-analog">Аналог </td>
+                        </tr>
+                        <tr class="equipment_table-tbody-tr">
+                            <td class="equipment-check check-box"></td>
+                            <td class="equipment-name"><a href="javascript:void(0)">15.6" Ноутбук HUAWEI MateBook D
+                                    477sdvsdddddddddddddd</a></td>
+                            <td class="equipment-company">ООО Глагол Нижний Но.dsvsddd</td>
+                            <td class="equipment-type">ПК</td>
+                            <td class="equipment-supplier">ООО «Волга»zzzzzzzzzzzzzzzzzz</td>
+                            <td class="equipment-division">Руководство</td>
+                            <td class="equipment-user">Иванов М. А.</td>
+                            <td class="equipment-number">7947592849759w444434</td>
+                            <td class="equipment-cost">3 000₽</td>
+                            <td class="equipment-analog">Аналог </td>
+                        </tr>
+                        <tr class="equipment_table-tbody-tr">
+                            <td class="equipment-check check-box"></td>
+                            <td class="equipment-name"><a href="javascript:void(0)">15.6" Ноутбук HUAWEI MateBook D
+                                    477sdvsdddddddddddddd</a></td>
+                            <td class="equipment-company">ООО Глагол Нижний Но.dsvsddd</td>
+                            <td class="equipment-type">ПК</td>
+                            <td class="equipment-supplier">ООО «Волга»zzzzzzzzzzzzzzzzzz</td>
+                            <td class="equipment-division">Руководство</td>
+                            <td class="equipment-user">Иванов М. А.</td>
+                            <td class="equipment-number">7947592849759w444434</td>
+                            <td class="equipment-cost">3 000₽</td>
+                            <td class="equipment-analog">Аналог </td>
+                        </tr>
+                        <tr class="equipment_table-tbody-tr">
+                            <td class="equipment-check check-box"></td>
+                            <td class="equipment-name"><a href="javascript:void(0)">15.6" Ноутбук HUAWEI MateBook D
+                                    477sdvsdddddddddddddd</a></td>
+                            <td class="equipment-company">ООО Глагол Нижний Но.dsvsddd</td>
+                            <td class="equipment-type">ПК</td>
+                            <td class="equipment-supplier">ООО «Волга»zzzzzzzzzzzzzzzzzz</td>
+                            <td class="equipment-division">Руководство</td>
+                            <td class="equipment-user">Иванов М. А.</td>
+                            <td class="equipment-number">7947592849759w444434</td>
+                            <td class="equipment-cost">3 000₽</td>
+                            <td class="equipment-analog">Аналог </td>
+                        </tr>
+                        <tr class="equipment_table-tbody-tr">
+                            <td class="equipment-check check-box"></td>
+                            <td class="equipment-name"><a href="javascript:void(0)">15.6" Ноутбук HUAWEI MateBook D
+                                    477sdvsdddddddddddddd</a></td>
+                            <td class="equipment-company">ООО Глагол Нижний Но.dsvsddd</td>
+                            <td class="equipment-type">ПК</td>
+                            <td class="equipment-supplier">ООО «Волга»zzzzzzzzzzzzzzzzzz</td>
+                            <td class="equipment-division">Руководство</td>
+                            <td class="equipment-user">Иванов М. А.</td>
+                            <td class="equipment-number">7947592849759w444434</td>
+                            <td class="equipment-cost">3 000₽</td>
+                            <td class="equipment-analog">Аналог </td>
+                        </tr>
+                        <tr class="equipment_table-tbody-tr">
+                            <td class="equipment-check check-box"></td>
+                            <td class="equipment-name"><a href="javascript:void(0)">15.6" Ноутбук HUAWEI MateBook D
+                                    477sdvsdddddddddddddd</a></td>
+                            <td class="equipment-company">ООО Глагол Нижний Но.dsvsddd</td>
+                            <td class="equipment-type">ПК</td>
+                            <td class="equipment-supplier">ООО «Волга»zzzzzzzzzzzzzzzzzz</td>
+                            <td class="equipment-division">Руководство</td>
+                            <td class="equipment-user">Иванов М. А.</td>
+                            <td class="equipment-number">7947592849759w444434</td>
+                            <td class="equipment-cost">3 000₽</td>
+                            <td class="equipment-analog">Аналог </td>
+                        </tr>
+                        <tr class="equipment_table-tbody-tr">
+                            <td class="equipment-check check-box"></td>
+                            <td class="equipment-name"><a href="javascript:void(0)">15.6" Ноутбук HUAWEI MateBook D
+                                    477sdvsdddddddddddddd</a></td>
+                            <td class="equipment-company">ООО Глагол Нижний Но.dsvsddd</td>
+                            <td class="equipment-type">ПК</td>
+                            <td class="equipment-supplier">ООО «Волга»zzzzzzzzzzzzzzzzzz</td>
+                            <td class="equipment-division">Руководство</td>
+                            <td class="equipment-user">Иванов М. А.</td>
+                            <td class="equipment-number">7947592849759w444434</td>
+                            <td class="equipment-cost">3 000₽</td>
+                            <td class="equipment-analog">Аналог </td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
-            <table class="comment_table">
-                <thead class="comment_table-thead">
-                    <tr class="comment_table-thead-tr">
-                        <th class="title-comment-chat"><button class="comment-chat-btn comment-chat-btn-empty"></button>
-                        </th>
-                        <th class="title-comment-settings"></th>
-                    </tr>
-                </thead>
-                <tbody class="comment_table-tbody">
-                    <tr class="comment_table-tbody-tr">
-                        <td class="comment-chat"><button class="comment-chat-btn comment-chat-btn-viewed"></button></td>
-                        <td class="comment-settings">
-                            <div class="comment-setting-config">
-                                <button class="comment-setting-ok-btn"></button>
-                                <button class="comment-setting-trash-btn"></button>
-                            </div>
-                            <div class="comment-setting-not-config">
-                                <button class="comment-setting-config-btn"></button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="comment_table-tbody-tr">
-                        <td class="comment-chat"><button class="comment-chat-btn comment-chat-btn-empty"></button></td>
-                        <td class="comment-settings activ-config">
-                            <div class="comment-setting-config">
-                                <button class="comment-setting-ok-btn"></button>
-                                <button class="comment-setting-trash-btn"></button>
-                            </div>
-                            <div class="comment-setting-not-config">
-                                <button class="comment-setting-config-btn"></button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="comment_table-tbody-tr">
-                        <td class="comment-chat"><button class="comment-chat-btn comment-chat-btn-unseen"></button></td>
-                        <td class="comment-settings">
-                            <div class="comment-setting-config">
-                                <button class="comment-setting-ok-btn"></button>
-                                <button class="comment-setting-trash-btn"></button>
-                            </div>
-                            <div class="comment-setting-not-config">
-                                <button class="comment-setting-config-btn"></button>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="equipment_table-not-scroll">
+                <table class="comment_table">
+                    <thead class="comment_table-thead">
+                        <tr class="comment_table-thead-tr">
+                            <th class="title-comment-chat"><button class="comment-chat-btn comment-chat-btn-empty"></button>
+                            </th>
+                            <th class="title-comment-settings"></th>
+                        </tr>
+                    </thead>
+                    <tbody class="comment_table-tbody">
+                        <tr class="comment_table-tbody-tr">
+                            <td class="comment-chat"><button class="comment-chat-btn comment-chat-btn-viewed"></button></td>
+                            <td class="comment-settings">
+                                <div class="comment-setting-config">
+                                    <button class="comment-setting-ok-btn"></button>
+                                    <button class="comment-setting-trash-btn"></button>
+                                </div>
+                                <div class="comment-setting-not-config">
+                                    <button class="comment-setting-config-btn"></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="comment_table-tbody-tr">
+                            <td class="comment-chat"><button class="comment-chat-btn comment-chat-btn-viewed"></button></td>
+                            <td class="comment-settings">
+                                <div class="comment-setting-config">
+                                    <button class="comment-setting-ok-btn"></button>
+                                    <button class="comment-setting-trash-btn"></button>
+                                </div>
+                                <div class="comment-setting-not-config">
+                                    <button class="comment-setting-config-btn"></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="comment_table-tbody-tr">
+                            <td class="comment-chat"><button class="comment-chat-btn comment-chat-btn-viewed"></button></td>
+                            <td class="comment-settings">
+                                <div class="comment-setting-config">
+                                    <button class="comment-setting-ok-btn"></button>
+                                    <button class="comment-setting-trash-btn"></button>
+                                </div>
+                                <div class="comment-setting-not-config">
+                                    <button class="comment-setting-config-btn"></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="comment_table-tbody-tr">
+                            <td class="comment-chat"><button class="comment-chat-btn comment-chat-btn-empty"></button></td>
+                            <td class="comment-settings activ-config">
+                                <div class="comment-setting-config">
+                                    <button class="comment-setting-ok-btn"></button>
+                                    <button class="comment-setting-trash-btn"></button>
+                                </div>
+                                <div class="comment-setting-not-config">
+                                    <button class="comment-setting-config-btn"></button>
+                                </div>
+                            </td>
+                        </tr>
+                        </tr>
+                        <tr class="comment_table-tbody-tr">
+                            <td class="comment-chat"><button class="comment-chat-btn comment-chat-btn-empty"></button></td>
+                            <td class="comment-settings activ-config">
+                                <div class="comment-setting-config">
+                                    <button class="comment-setting-ok-btn"></button>
+                                    <button class="comment-setting-trash-btn"></button>
+                                </div>
+                                <div class="comment-setting-not-config">
+                                    <button class="comment-setting-config-btn"></button>
+                                </div>
+                            </td>
+                        </tr>
+                        </tr>
+                        <tr class="comment_table-tbody-tr">
+                            <td class="comment-chat"><button class="comment-chat-btn comment-chat-btn-empty"></button></td>
+                            <td class="comment-settings activ-config">
+                                <div class="comment-setting-config">
+                                    <button class="comment-setting-ok-btn"></button>
+                                    <button class="comment-setting-trash-btn"></button>
+                                </div>
+                                <div class="comment-setting-not-config">
+                                    <button class="comment-setting-config-btn"></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="comment_table-tbody-tr">
+                            <td class="comment-chat"><button class="comment-chat-btn comment-chat-btn-unseen"></button></td>
+                            <td class="comment-settings">
+                                <div class="comment-setting-config">
+                                    <button class="comment-setting-ok-btn"></button>
+                                    <button class="comment-setting-trash-btn"></button>
+                                </div>
+                                <div class="comment-setting-not-config">
+                                    <button class="comment-setting-config-btn"></button>
+                                </div>
+                            </td>
+                        </tr>
+                        </tr>
+                        <tr class="comment_table-tbody-tr">
+                            <td class="comment-chat"><button class="comment-chat-btn comment-chat-btn-unseen"></button></td>
+                            <td class="comment-settings">
+                                <div class="comment-setting-config">
+                                    <button class="comment-setting-ok-btn"></button>
+                                    <button class="comment-setting-trash-btn"></button>
+                                </div>
+                                <div class="comment-setting-not-config">
+                                    <button class="comment-setting-config-btn"></button>
+                                </div>
+                            </td>
+                        </tr>
+                        </tr>
+                        <tr class="comment_table-tbody-tr">
+                            <td class="comment-chat"><button class="comment-chat-btn comment-chat-btn-unseen"></button></td>
+                            <td class="comment-settings">
+                                <div class="comment-setting-config">
+                                    <button class="comment-setting-ok-btn"></button>
+                                    <button class="comment-setting-trash-btn"></button>
+                                </div>
+                                <div class="comment-setting-not-config">
+                                    <button class="comment-setting-config-btn"></button>
+                                </div>
+                            </td>
+                        </tr>
+                        </tr>
+                        <tr class="comment_table-tbody-tr">
+                            <td class="comment-chat"><button class="comment-chat-btn comment-chat-btn-unseen"></button></td>
+                            <td class="comment-settings">
+                                <div class="comment-setting-config">
+                                    <button class="comment-setting-ok-btn"></button>
+                                    <button class="comment-setting-trash-btn"></button>
+                                </div>
+                                <div class="comment-setting-not-config">
+                                    <button class="comment-setting-config-btn"></button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
 
         <section class="popap_comment-wrap">
@@ -446,7 +640,7 @@
                                     10.04.23</p>
                             </div>
                         </div>
-                        <div class="popap_comment-past-elem">
+                        <div class="popap_comment-past-elem popap_comment-past-elem-new">
                             <div class="popap_comment-past-data">
                                 <p><span class="popap_comment-past-data-number">29.03.23</span> в <span
                                         class="popap_comment-past-data-time">14:16</span>
@@ -524,7 +718,17 @@
             <div class="all-unconfirmed">
                 <button class="all-unconfirme-mark blue-link">Выделить все неподтвержденные</button>
             </div>
+            <div class="control_showing-mobail">
+                <p>Отмечено: <span>6</span></p>
+                <a class="blue-link control_showing-mobail-link" href="javascript:void(0)">Подтвердить</a>
+                <a class="blue-link control_showing-mobail-link" href="javascript:void(0)">Отменить</a>
+                <a class="blue-link control_showing-mobail-link" href="javascript:void(0)">Показать только выделенные</a>
+                <a class="red-link control_showing-mobail-link" href="javascript:void(0)">Сбросить всё</a>
+            </div>
         </section>
+
+        
+        <div class="popap-overlay"></div>
         
     </main>
 
