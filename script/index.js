@@ -111,13 +111,18 @@ $(document).ready(function () {
 
 //---------------------------Клик на строку таблицы
 
-$(document).on('click', '.equipment_table-tbody-tr', function () {
+$(document).on('click', '.equipment_table-tbody-tr', function (e) {
 
     let indTr = $('.equipment_table-tbody-tr').index(this);
 
-    $('.equipment_table-tbody-tr').eq(indTr).toggleClass('equipment_table-tr-check');
-    $('.comment_table-tbody-tr').eq(indTr).toggleClass('comment_table-tr-check');
-    $('.equipment-check').eq(indTr).toggleClass('check-box-activ');
+
+    if (!$('.equipment-name').is(e.target)
+            && $('.equipment-name').has(e.target).length === 0) {
+
+                $('.equipment_table-tbody-tr').eq(indTr).toggleClass('equipment_table-tr-check');
+                $('.comment_table-tbody-tr').eq(indTr).toggleClass('comment_table-tr-check');
+                $('.equipment-check').eq(indTr).toggleClass('check-box-activ');
+    }
 });
 
 //------------------Открыть закрыть список фильтров
@@ -147,7 +152,8 @@ $(document).click(function (e) {
     }
 });
 
-$(document).on('click', '.popap_filter-apply-btn, .popap_filter-reset-btn', function () {
+$(document).on('click', '.popap_filter-apply-btn', function () {
+    $('.popap_filter_option-elem-search-wrap').removeClass('sub-filter-activ').slideUp()
     if ($(window).width() < 1199) {
         $('.popap-overlay, .popap_filter-wrap').fadeOut().toggleClass('filter-activ');
     } else {
@@ -166,7 +172,22 @@ $(document).on('click', '.popap_filter_option-elem-btn', function (e) {
         $('.popap_filter_option-elem-search-wrap').removeClass('sub-filter-activ').slideUp()
         $('.popap_filter_option-elem-search-wrap').eq(ind).addClass('sub-filter-activ').slideDown()
     }
+
 });
+
+
+$(document).on('click', function (e) {
+
+    if ($('.popap_filter_option-elem-search-wrap').hasClass('sub-filter-activ')) {
+        if (!$('.popap_filter-type').is(e.target)
+            && $('.popap_filter-type').has(e.target).length === 0) {
+            
+            $('.popap_filter_option-elem-search-wrap').removeClass('sub-filter-activ').slideUp()
+        }
+    }
+
+});
+
 
 //------------------Выбрать один пункт субфильтра
 
@@ -226,11 +247,13 @@ $(document).on('click', '.control_showing-opt', function () {
 //------------------Выделить все неподтвержденные
 
 $(document).on('click', '.all-unconfirme-mark', function () {
-    $('.equipment-check').removeClass('check-box-activ');
+    $('.equipment-check').removeClass('check-box-activ');    
+    $('.equipment_table-tbody-tr').removeClass('equipment_table-tr-check');
     $('.comment-settings').each(function () {
         if ($(this).hasClass('activ-config')) {
             let indConf = $('.comment-settings').index(this);
             $('.equipment-check').eq(indConf).addClass('check-box-activ');
+            $('.equipment_table-tbody-tr').eq(indConf).addClass('equipment_table-tr-check');
         };
     });
 });
@@ -240,10 +263,33 @@ $(document).on('click', '.all-unconfirme-mark', function () {
 $(document).on('click', '.aside_burg-btn', function () {
     $('.aside_menu-nav').slideToggle().toggleClass('activ');
     if ($('.aside_menu-nav').hasClass('activ')) {
-        $('.aside_burg-btn-open').fadeOut();
-        $('.aside_burg-btn-close').fadeIn();
+        asideBurgClose()
     } else {
-        $('.aside_burg-btn-close').fadeOut();
-        $('.aside_burg-btn-open').fadeIn();
+        asideBurgOpen()
     }
 });
+
+$(document).on('click', '.aside_menu-nav', function (e) {
+        if (!$('.aside_menu').is(e.target)
+            && $('.aside_menu').has(e.target).length === 0) {
+                asideBurgClose()
+                $('.aside_menu-nav').slideToggle().toggleClass('activ');
+        }
+});
+
+function asideBurgClose(){
+    $('.aside_burg-btn-open').fadeOut();
+    $('.aside_burg-btn-close').fadeIn();
+};
+
+function asideBurgOpen(){
+    $('.aside_burg-btn-close').fadeOut();
+    $('.aside_burg-btn-open').fadeIn();
+};
+
+//закрыть попапы по клику на оболочку
+
+$(document).on('click', '.popap-overlay--js, .aside_menu-nav ', function () {
+    $('.popap-overlay--js, .popap-open').fadeOut();
+});
+
