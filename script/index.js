@@ -1,196 +1,179 @@
 
-//-------------------Свернуть развернуть ASIDE, закрыть sub-menu
+//-------------------Свернуть развернуть ASIDE по кнопке
 
 
-$('.aside_logo_close').click( function(){
-    if($('.aside_submenu').hasClass('sub-open')){
-        $('.aside_submenu').removeClass('sub-open');
-        $('.aside_submenu').hide(300);
-        if ($('#aside').hasClass('aside-close')) {        
-            setTimeout(function() { 
-                asideOpen();
-            }, 300);         
-        } else {
-            setTimeout(function() { 
-                asideClose();
-            }, 300); 
-        }
-    } else {
-        if ($('#aside').hasClass('aside-close')) {   
-                asideOpen();
-        } else {
-                asideClose();
-        }
+$(document).on('click', '.aside_logo_close', function () {
+
+    if ($('.aside_submenu').hasClass('sub-open')) { // если открыто подменю то закрываем и...
+
+        $('.aside_submenu').removeClass('sub-open').hide(300);
+
+        $('#aside').hasClass('aside-close') ?  // если aside свёрнут - разворачиваем с задержкой, чтобы подменю успело скрыться
+            setTimeout(function () { asideOpen(); }, 300) :
+            setTimeout(function () { asideClose(); }, 300);
+
+    } else {   // если закрыто подменю то просто открываем/закрываем aside 
+        
+        $('#aside').hasClass('aside-close') ? asideOpen() : asideClose();
     }
 });
 
-
 function asideClose() {
-    $('.aside_logo_link img').hide(300);
-    $('.aside_menu-link span').hide(300);
-    $('#aside').animate({width: '80px'}, 300);
-    $('.aside_logo').animate({'margin-left': '32px'}, 300);
-    $('#aside').addClass('aside-close');
+    $('.aside_logo_link img').hide(300);  // спрятать логотип
+    $('.aside_menu-link span').hide(300);  // скрыть названия пунктов меню
+    $('#aside').animate({ width: '80px' }, 300).addClass('aside-close');   // плавно уменьшаем ширину aside и добавляем класс о закрытии
+    $('.aside_logo').animate({ 'margin-left': '32px' }, 300); // уменьшаем отступ, чтобы кнопка не выезжала за меню
 }
 
-function asideOpen() {
+function asideOpen() {  // аналогично asideClose(), но в обратном смысле
     $('.aside_logo_link img').show(300);
     $('.aside_menu-link span').show(300);
-    $('#aside').animate({width: '256px'}, 300);
-    $('.aside_logo').animate({'margin-left': '40px'}, 300);
-    $('#aside').removeClass('aside-close');
+    $('#aside').animate({ width: '256px' }, 300).removeClass('aside-close');
+    $('.aside_logo').animate({ 'margin-left': '40px' }, 300);
 }
+
+
 
 //-------------------Открыть закрыть подменю NAV
 
-$('.aside_submenu-btn').each(function(){
-    $(this).click(function(){
-        
-        let indSubmenuBtn = $('.aside_submenu-btn').index(this);
+$(document).on('click', '.aside_submenu-btn', function () {
+    let ind = $('.aside_submenu-btn').index(this);
 
-            if ($('.aside_submenu').eq(indSubmenuBtn).hasClass('sub-open')) {            
-                $('.aside_submenu').eq(indSubmenuBtn).removeClass('sub-open');
-                $('.aside_submenu').eq(indSubmenuBtn).hide(300);
-            } else {          
-                $('.aside_submenu').hide(300);                     
-                $('.aside_submenu').removeClass('sub-open');
-                $('.aside_submenu').eq(indSubmenuBtn).addClass('sub-open');
-                $('.aside_submenu').eq(indSubmenuBtn).show(300);            
-            }         
-        
-    });
+        if ($('.aside_submenu').eq(ind).hasClass('sub-open')) {
+            $('.aside_submenu').eq(ind).removeClass('sub-open').hide(300);
+        } else {
+            $('.aside_submenu').hide(300).removeClass('sub-open');
+            $('.aside_submenu').eq(ind).addClass('sub-open').show(300);
+        }
 });
 
-//---Закрыть подменю по клику вне, при закрытом ASIDE
 
 
-    $(document).click(function (e){
-        if (!$('aside').is(e.target) && $('aside').has(e.target).length === 0 ) { 
-            
-            $('.aside_submenu').removeClass('sub-open');
-            $('.aside_submenu').hide(300);
-        }
-    });
+//---Закрыть подменю по клику вне
+
+// $(document).on('click', '.aside_logo_close', function () {});
+
+// $(document).click(function (e) {
+//     if (!$('aside').is(e.target) && $('aside').has(e.target).length === 0) {
+
+//         $('.aside_submenu').removeClass('sub-open').hide(300);
+//     }
+// });
 
 
 //------------------Открыть закрыть выбор способа загрузки, заменить текст
 
-$('.form_cotrols-load-select').click(function(){
+$(document).on('click', '.form_cotrols-load-select', function () {
     $('.form_cotrols-load-options').slideToggle();
-
-    $('.form_cotrols-load-options-elem').each(function(){
-        $(this).click(function(){
-            $('.form_cotrols-load-select-text').text($(this).text());
-            $('.form_cotrols-load-options').slideUp();
-        });
-    });
 });
 
-$(document).click(function (e){
-    if (!$('.form_cotrols-load-options-elem').is(e.target) 
-    && $('.form_cotrols-load-options-elem').has(e.target).length === 0 
-    && !$('.form_cotrols-load-select').is(e.target) 
-    && $('.form_cotrols-load-select').has(e.target).length === 0) { 
-        
+$(document).on('click', '.form_cotrols-load-options-elem', function () {
+            $('.form_cotrols-load-select-text').text($(this).text());
+            $('.form_cotrols-load-options').slideUp();
+});
+
+$(document).click(function (e) {
+    if (!$('.form_cotrols-load-options-elem').is(e.target)
+        && $('.form_cotrols-load-options-elem').has(e.target).length === 0
+        && !$('.form_cotrols-load-select').is(e.target)
+        && $('.form_cotrols-load-select').has(e.target).length === 0) {
+
         $('.form_cotrols-load-options').slideUp();
     }
 });
 
+
 //------------------Выбрать все пункты таблицы
 
-$('.title-equipment-check').click(function(){
-    if($('.title-equipment-check').hasClass('check-box-activ')){
-        $('.title-equipment-check').removeClass('check-box-activ');
-        $('.equipment-check').removeClass('check-box-activ');
+$(document).on('click', '.title-equipment-check', function () {
+    if ($('.title-equipment-check').hasClass('check-box-activ')) {
+        $('.title-equipment-check, .equipment-check').removeClass('check-box-activ');
+        $('.comment_table-tbody-tr').removeClass('comment_table-tr-check');
+        $('.equipment_table-tbody-tr').removeClass('equipment_table-tr-check');
     } else {
-        $('.title-equipment-check').addClass('check-box-activ');
-        $('.equipment-check').addClass('check-box-activ');
+        $('.title-equipment-check, .equipment-check').addClass('check-box-activ');
+        $('.comment_table-tbody-tr').addClass('comment_table-tr-check');
+        $('.equipment_table-tbody-tr').addClass('equipment_table-tr-check');
     }
-})
+});
 
+//---------------------------эффект ховера в таблице комментариев при навееднии на строку
 
-//---------------------------Клик на строку таблицы
-
-$( document ).ready(function(){    
-    $( ".equipment_table-tbody-tr" ).hover(function(){	
+$(document).ready(function () {
+    $(".equipment_table-tbody-tr").hover(function () {
         let indTr = $('.equipment_table-tbody-tr').index(this);
         $('.comment_table-tbody-tr').eq(indTr).addClass('comment_table-tr-hover');
-      }, function(){ 	
+    }, function () {
         let indTr = $('.equipment_table-tbody-tr').index(this);
         $('.comment_table-tbody-tr').eq(indTr).removeClass('comment_table-tr-hover');
     });
-  });
-
-
-  $('.equipment_table-tbody-tr').each(function(){
-    $(this).click(function(){
-        
-        let indTr = $('.equipment_table-tbody-tr').index(this);
-
-        $('.equipment_table-tbody-tr').eq(indTr).toggleClass('equipment_table-tr-check');
-        $('.comment_table-tbody-tr').eq(indTr).toggleClass('comment_table-tr-check');
-        $('.equipment-check').eq(indTr).toggleClass('check-box-activ');
-
-    });
 });
 
+//---------------------------Клик на строку таблицы
+
+$(document).on('click', '.equipment_table-tbody-tr', function () {
+
+    let indTr = $('.equipment_table-tbody-tr').index(this);
+
+    $('.equipment_table-tbody-tr').eq(indTr).toggleClass('equipment_table-tr-check');
+    $('.comment_table-tbody-tr').eq(indTr).toggleClass('comment_table-tr-check');
+    $('.equipment-check').eq(indTr).toggleClass('check-box-activ');
+});
 
 //------------------Открыть закрыть список фильтров
 
+$(document).on('click', '.form_cotrols-filter-select', function () {
 
-$('.form_cotrols-filter-select').click(function(){
-
-    if ($(window).width() < 1199){
-        $('.popap-overlay').fadeIn().toggleClass('filter-activ');
-        $('.popap_filter-wrap').fadeIn().toggleClass('filter-activ');
+    if ($(window).width() < 1199) {
+        $('.popap-overlay, .popap_filter-wrap').fadeIn().toggleClass('filter-activ');
     } else {
         $('.popap_filter-wrap').slideToggle().toggleClass('filter-activ');
     }
-
-    if ($('.popap_filter-wrap').hasClass('filter-activ')) {
-        $(document).click(function (e){
-            if (!$('.popap_filter-wrap').is(e.target) 
-            && $('.popap_filter-wrap').has(e.target).length === 0 
-            && !$('.form_cotrols-filter-select').is(e.target) 
-            && $('.form_cotrols-filter-select').has(e.target).length === 0) { 
-                $('.popap_filter-wrap').slideUp().removeClass('filter-activ')
-            }
-        });
-    } 
 });
 
-$('.popap_filter-apply-btn').click(function(){
-    if ($(window).width() < 1199){
-        $('.popap-overlay').fadeOut().toggleClass('filter-activ');
-        $('.popap_filter-wrap').fadeOut().toggleClass('filter-activ');
-    } else {
-        $('.popap_filter-wrap').hide(300).removeClass('filter-activ');
+$(document).click(function (e) {
+    if ($('.popap_filter-wrap').hasClass('filter-activ')) {
+        if (!$('.popap_filter-wrap').is(e.target)
+            && $('.popap_filter-wrap').has(e.target).length === 0
+            && !$('.form_cotrols-filter-select').is(e.target)
+            && $('.form_cotrols-filter-select').has(e.target).length === 0) {
+                if ($(window).width() < 1199) {
+                    $('.popap-overlay').fadeOut().toggleClass('filter-activ');
+                    $('.popap_filter-wrap').fadeOut().toggleClass('filter-activ');
+                } else {
+                    $('.popap_filter-wrap').slideUp().removeClass('filter-activ');
+                }
+        }
     }
 });
 
-
+$(document).on('click', '.popap_filter-apply-btn, .popap_filter-reset-btn', function () {
+    if ($(window).width() < 1199) {
+        $('.popap-overlay, .popap_filter-wrap').fadeOut().toggleClass('filter-activ');
+    } else {
+        $('.popap_filter-wrap').slideUp().removeClass('filter-activ');
+    }
+});
 
 //----------------------Открыть закрыть подфильтр в попапе фильтров
 
-$('.popap_filter_option-elem-btn').each(function(){
-    $(this).click(function(){
+$(document).on('click', '.popap_filter_option-elem-btn', function (e) {
+    let ind = $('.popap_filter_option-elem-btn').index(this);
 
-        
+    if($('.popap_filter_option-elem-search-wrap').eq(ind).hasClass('sub-filter-activ')){
         $('.popap_filter_option-elem-search-wrap').removeClass('sub-filter-activ').slideUp()
-
-        let indSubFilter = $('.popap_filter_option-elem-btn').index(this);
-        $('.popap_filter_option-elem-search-wrap').eq(indSubFilter).addClass('sub-filter-activ').slideDown()
-
-    });
+    } else {
+        $('.popap_filter_option-elem-search-wrap').removeClass('sub-filter-activ').slideUp()
+        $('.popap_filter_option-elem-search-wrap').eq(ind).addClass('sub-filter-activ').slideDown()
+    }
 });
-
-
-
 
 //------------------Выбрать один пункт субфильтра
 
-$('.popap_filter_option-elem-search').each(function(){
-    $(this).click(function(){
+$(document).on('click', '.aside_logo_close', function () {});
+
+$('.popap_filter_option-elem-search').each(function () {
+    $(this).click(function () {
         let indCheck = $('.popap_filter_option-elem-search').index(this);
         $('.popap_filter_option-elem-search-btn').eq(indCheck).toggleClass('check-box-activ');
     });
@@ -198,77 +181,69 @@ $('.popap_filter_option-elem-search').each(function(){
 
 //------------------Сбросить все пункты субфильтра
 
-$('.popap_filter-reset-btn').click(function(){
+$(document).on('click', '.popap_filter-reset-btn', function () {
     $('.popap_filter_option-elem-search-btn').removeClass('check-box-activ');
-})
+});
 
 //------------------Выбрать один пункт в списке поиска субфильтра
 
-$('.popap_filter_list-elem').each(function(){
-    $(this).click(function(){
-        let indCheck = $('.popap_filter_list-elem').index(this);
-        $('.popap_filter_list-elem-btn').eq(indCheck).toggleClass('check-box-activ');
-    });
+$(document).on('click', '.popap_filter_list-elem', function () {
+    
+    let ind = $('.popap_filter_list-elem').index(this);
+    $('.popap_filter_list-elem-btn').eq(ind).toggleClass('check-box-activ');
 });
 
 //--------------------------------Открыть закрыть попапы комментариев
 
-$('.popap_comment-btn').click(function(){
-    $('.popap_comment-wrap').fadeOut()
-    $('.popap_comment-not-past').fadeOut();
-    $('.popap_comment-past').fadeOut();
-})
-
-$('.comment-chat-btn-empty').click(function(){
+$(document).on('click', '.comment-chat-btn', function (e) {
     $('.popap_comment-wrap').fadeIn();
-    $('.popap_comment-not-past').fadeIn();
-})
-$('.comment-chat-btn-viewed, .comment-chat-btn-unseen').click(function(){
-    $('.popap_comment-wrap').fadeIn();
-    $('.popap_comment-past').fadeIn();
+    $(e.target).hasClass('comment-chat-btn-empty') ? $('.popap_comment-not-past').fadeIn() : $('.popap_comment-past').fadeIn();  
+});
+$(document).on('click', '.popap_comment-btn', function () {
+    $('.popap_comment-wrap, .popap_comment-not-past, .popap_comment-past').fadeOut()
 })
 
 //--------------------------------Открыть закрыть попап удаления элемента
 
-
-$('.popap-delete-btn').click(function(){
+$(document).on('click', '.popap-delete-btn', function () {
     $('.popap-delete-wrap').fadeOut()
-})
-
-$('.comment-setting-trash-btn').click(function(){
+});
+$(document).on('click', '.comment-setting-trash-btn', function () {
     $('.popap-delete-wrap').fadeIn()
-})
+});
 
 //------------------Открыть закрыть выбор количества отображаемых результатов в таблице, заменить текст
 
-$('.control_showing-opt-activ').click(function(){
+$(document).on('click', '.control_showing-opt-activ', function () {
     $('.control_showing-opt-dis').slideToggle();
-
-    $('.control_showing-opt').each(function(){
-        $(this).click(function(){
-            $('.control_showing-opt-activ').text($(this).text());
-            $('.control_showing-opt-dis').slideUp();
-        });
-    });
 });
 
+$(document).on('click', '.control_showing-opt', function () {
+    $('.control_showing-opt-activ').text($(this).text());
+    $('.control_showing-opt-dis').slideUp();
+});
 
 //------------------Выделить все неподтвержденные
 
-$('.all-unconfirme-mark').click(function(){
+$(document).on('click', '.all-unconfirme-mark', function () {
     $('.equipment-check').removeClass('check-box-activ');
-    $('.comment-settings').each(function(){
-        if($(this).hasClass('activ-config')){
-            let indConf =$('.comment-settings').index(this);
+    $('.comment-settings').each(function () {
+        if ($(this).hasClass('activ-config')) {
+            let indConf = $('.comment-settings').index(this);
             $('.equipment-check').eq(indConf).addClass('check-box-activ');
-        } ;
+        };
     });
-
 });
-
 
 //----------------------Открыть закрыть меню 1199px
 
-$(document).on('click', '.aside_burg-btn', function(){
-   $('.aside_menu-nav').slideToggle();
+$(document).on('click', '.aside_burg-btn', function () {
+    $('.aside_menu-nav').slideToggle().toggleClass('activ');
+    if ($('.aside_menu-nav').hasClass('activ')) {
+        $('.aside_burg-btn-open').fadeOut();
+        $('.aside_burg-btn-close').fadeIn();
+    } else {
+        $('.aside_burg-btn-close').fadeOut();
+        $('.aside_burg-btn-open').fadeIn();
+    }
 });

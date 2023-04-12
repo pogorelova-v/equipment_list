@@ -64,6 +64,7 @@
         top: 0;
         left: 0;
     }
+
     .aside_burg-btn-close {
         display: none;
     }
@@ -142,8 +143,6 @@
         width: 100%;
         z-index: 2;
     }
-
-
     .popap_filter-wrap {
         display: none;
         position: fixed;
@@ -290,11 +289,29 @@
         width: 100%;
     }
 
+
+    .form_cotrols-load,
     .form_cotrols-load-select-btn {
-        min-width: 100%;
+        width: 100%;
     }
 
+    .form_cotrols-search {
+        width: 150px;
+    }
 
+    .popap_filter-wrap{
+        height: 100%;
+        margin-top: 64px;
+    }
+    .popap_filter_option {
+        width: 100%;
+        height: 100%;
+        padding: 16px;
+    }
+
+    .popap_filter_option-elem{
+        width: 100%;
+    }
     .control_table {
         flex-direction: column;
     }
@@ -309,7 +326,19 @@
     }
 
     .control_table-wrap {
+        position: relative;
         margin: 0;
+        padding-top: 24px;
+    }
+
+    .control_table-wrap::after {
+        position: absolute;
+        content: '';
+        top: -2px;
+        left: 0;
+        width: 16px;
+        height: 10px;
+        background-color: var(--white);
     }
 
     .control_showing-mobail {
@@ -321,6 +350,34 @@
         gap: 16px;
         font-size: 14px;
         font-weight: 600;
+    }
+
+
+    .equipment_table-wrap {
+        padding: 0px;
+        overflow-x: scroll;
+    }
+
+    .equipment_table-scroll {
+        display: flex;
+        flex-grow: 1;
+        width: auto;
+        overflow-x: visible;
+    }
+
+
+    .equipment_table-tbody-tr,
+    .equipment_table-thead-tr {
+        padding-left: 16px;
+    }
+
+    .equipment_table-tbody-tr::after {
+        width: 16px;
+    }
+
+    .comment_table-thead-tr,
+    .comment_table-tbody-tr {
+        padding: 0 16px 0 16px;
     }
 
     .popap_comment-wrap,
@@ -381,4 +438,19 @@
         font-size: 16px;
     }
 
+    .popap_filter-wrap {
+        width: 100%;
+    }
+
+    .popap_filter_list-wrap {
+        display: none;
+    }
+
+    .popap_filter-title{
+        display: block;
+        font-size: 20px;
+        font-weight: 900;
+        padding: 48px 0 32px 0;
+        text-align: center;
+    }
 }
