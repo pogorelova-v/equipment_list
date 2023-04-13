@@ -200,12 +200,6 @@ $('.popap_filter_option-elem-search').each(function () {
     });
 });
 
-//------------------Сбросить все пункты субфильтра
-
-$(document).on('click', '.popap_filter-reset-btn', function () {
-    $('.popap_filter_option-elem-search-btn').removeClass('check-box-activ');
-});
-
 //------------------Выбрать один пункт в списке поиска субфильтра
 
 $(document).on('click', '.popap_filter_list-elem', function () {
@@ -213,6 +207,13 @@ $(document).on('click', '.popap_filter_list-elem', function () {
     let ind = $('.popap_filter_list-elem').index(this);
     $('.popap_filter_list-elem-btn').eq(ind).toggleClass('check-box-activ');
 });
+
+//------------------Сбросить все пункты субфильтра
+
+$(document).on('click', '.popap_filter-reset-btn', function () {
+    $('.popap_filter_option-elem-search-btn, .popap_filter_list-elem-btn').removeClass('check-box-activ');
+});
+
 
 //--------------------------------Открыть закрыть попапы комментариев
 
@@ -223,6 +224,9 @@ $(document).on('click', '.comment-chat-btn', function (e) {
 $(document).on('click', '.popap_comment-btn', function () {
     $('.popap_comment-wrap, .popap_comment-not-past, .popap_comment-past').fadeOut()
 })
+// $(document).on('click', '.popap_comment-wrap', function () {
+//     $('.popap_comment-wrap, .popap_comment-not-past, .popap_comment-past').fadeOut()
+// })
 
 //--------------------------------Открыть закрыть попап удаления элемента
 
@@ -233,16 +237,7 @@ $(document).on('click', '.comment-setting-trash-btn', function () {
     $('.popap-delete-wrap').fadeIn()
 });
 
-//------------------Открыть закрыть выбор количества отображаемых результатов в таблице, заменить текст
 
-$(document).on('click', '.control_showing-opt-activ', function () {
-    $('.control_showing-opt-dis').slideToggle();
-});
-
-$(document).on('click', '.control_showing-opt', function () {
-    $('.control_showing-opt-activ').text($(this).text());
-    $('.control_showing-opt-dis').slideUp();
-});
 
 //------------------Выделить все неподтвержденные
 
@@ -293,3 +288,136 @@ $(document).on('click', '.popap-overlay--js, .aside_menu-nav ', function () {
     $('.popap-overlay--js, .popap-open').fadeOut();
 });
 
+
+
+//-----------Открыть поиск по названию в фильтрах на мобилке
+
+$(document).on('click', '.form_search-inp', function (e) {
+
+    if ($(window).width() < 768) {
+        if($('.popap_filter_list').hasClass('activ')){
+            $('.popap_filter_list').removeClass('activ').slideUp()
+        } else {
+            $('.popap_filter_list').removeClass('activ').slideUp()
+            $('.popap_filter_list').addClass('activ').slideDown()
+        }
+    } 
+});
+
+
+$(document).on('click', function (e) {
+
+    if ($('.popap_filter_list').hasClass('activ')) {
+        if (!$('.popap_filter_list').is(e.target)
+            && $('.popap_filter_list').has(e.target).length === 0
+            && !$('.form_search-inp').is(e.target)
+            && $('.form_search-inp').has(e.target).length === 0) {
+            
+            $('.popap_filter_list').removeClass('activ').slideUp()
+        }
+    }
+
+});
+
+
+//----------Поиск по названию в фильтрах
+
+$(document).ready(function(){
+    $("#search_filter").keyup(function(){
+    _this = this;
+    
+    $.each($("#search_sub_list li"), function() {
+        if($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) === -1) {
+            $(this).hide();
+        } else {
+            $(this).show();              
+        };
+        });
+
+    });
+});
+
+//-----------------------открыть настройки личного кабиента
+
+$(document).on('click', '.personal-link', function () {
+    if ($(window).width() > 1199) {
+        $('.personal_drop-down').slideToggle();
+    } else {
+        $('.modal-person').fadeIn();
+    }
+});
+$(document).on('click', function (e) {
+    if ($('.modal-person').is(":visible") 
+        && !$('.personal-link').is(e.target)
+        && $('.personal-link').has(e.target).length === 0) {
+        $('.modal-person').fadeOut();
+    }
+});
+
+//------------------Открыть закрыть выбор три точки
+
+$(document).on('click', '.comment-setting-config-btn', function () {
+    let ind = $('.comment-setting-config-btn').index(this);
+
+    if ($(window).width() > 1199) {
+        $('.com-set-list').eq(ind).slideToggle();
+    } else {
+        $('.modal-com-set').fadeIn();
+    }
+});
+
+$(document).on('click', function (e) {
+    if ($('.modal-com-set').is(":visible") 
+        && !$('.comment-setting-config-btn').is(e.target)
+        && $('.comment-setting-config-btn').has(e.target).length === 0) {
+        $('.modal-com-set').fadeOut();
+    }
+});
+
+//------------------Открыть закрыть выбор количества отображаемых результатов в таблице, заменить текст
+
+$(document).on('click', '.control_showing-opt-activ', function () {
+    if ($(window).width() > 1199) {
+        $('.control_showing-opt-dis').slideToggle();
+    } else {
+        $('.modal-vis-pages').fadeIn();
+    }
+});
+
+$(document).on('click', function (e) {
+    if ($('.modal-vis-pages').is(":visible") 
+        && !$('.control_showing-opt-activ').is(e.target)
+        && $('.control_showing-opt-activ').has(e.target).length === 0
+        && !$('.modal-vis-pages-elem').is(e.target)
+        && $('.modal-vis-pages-elem').has(e.target).length === 0) {
+        $('.modal-vis-pages').fadeOut();
+    }
+});
+
+$(document).on('click', '.control_showing-opt, .modal-vis-pages-elem', function () {
+    $('.control_showing-opt-activ').text($(this).text());
+        $('.control_showing-opt-dis').slideUp();
+        $('.modal-vis-pages').fadeOut();
+});
+
+
+//--------------------------поиск по таблице
+
+$(document).ready(function(){
+    $("#search").keyup(function(){
+    _this = this;
+    
+    $.each($("#table tbody tr"), function() {
+        if($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) === -1) {
+            $(this).hide();
+            let ind = $('#table tbody tr').index(this);
+            $('.comment_table-tbody-tr').eq(ind).hide()
+        } else {
+            $(this).show();              
+            let ind = $('#table tbody tr').index(this);
+            $('.comment_table-tbody-tr').eq(ind).show()  
+        };
+        });
+
+    });
+});

@@ -81,13 +81,18 @@
                 <h1>Список оборудования</h1>
                 <p class="h1_subtitle">Здесь вы можете управлять списком вашего оборудования</p>
             </div>
+            <ul class="personal_drop-down">
+                <li><a class="personal_drop-down-elem" href="javascript:void(0)">Личный кабинет</a></li> 
+                <li><a class="personal_drop-down-elem" href="javascript:void(0)">Безопасность</a></li> 
+                <li><a class="personal_drop-down-elem" href="javascript:void(0)">Выйти </a></li> 
+            </ul>
         </section>
 
         <section class="form_cotrols_table">
             <div class="container">
                 <form class="form_cotrols df ai-cn" action="#">
                     <div class="form_cotrols-elem-wrap form_cotrols-search">
-                        <input class="form_cotrols-elem" type="text" placeholder="Поиск по таблице">
+                        <input id="search" class="form_cotrols-elem" type="text" placeholder="Поиск по таблице">
                     </div>
                     <div class="popap_filter-block">
                         <div class="form_cotrols-elem-wrap form_cotrols-filter">
@@ -192,11 +197,11 @@
                             </div>
                             <div class="popap_filter_list-wrap">
                                 <div class="popap_filter_list-search form_search-inp-wrap form_cotrols-search">
-                                    <input class="popap_filter_list-inp form_search-inp" type="text"
+                                    <input id="search_filter" class="popap_filter_list-inp form_search-inp" type="text"
                                         placeholder="Поиск по названию">
                                 </div>
                                 <div class="popap_filter_list">
-                                    <ul>
+                                    <ul id="search_sub_list" class="popap_filter_list-ul">
                                         <li class="popap_filter_list-elem">
                                             <button class="popap_filter_list-elem-btn check-box"></button>
                                             <span>ООО Литтера</span>
@@ -207,7 +212,7 @@
                                         </li>
                                         <li class="popap_filter_list-elem">
                                             <button class="popap_filter_list-elem-btn check-box"></button>
-                                            <span>ООО Литтера</span>
+                                            <span>Кофемолка тест</span>
                                         </li>
                                         <li class="popap_filter_list-elem">
                                             <button class="popap_filter_list-elem-btn check-box"></button>
@@ -286,7 +291,7 @@
 
         <section class="equipment_table-wrap">
             <div class="equipment_table-scroll">
-                <table class="equipment_table">
+                <table id="table" class="equipment_table">
                     <thead class="equipment_table-thead">
                         <tr class="equipment_table-thead-tr">
                             <th class="title-equipment-check check-box"></th>
@@ -302,19 +307,7 @@
                         </tr>
                     </thead>
                     <tbody class="equipment_table-tbody">
-                        <tr class="equipment_table-tbody-tr">
-                            <td class="equipment-check check-box"></td>
-                            <td class="equipment-name"><a href="javascript:void(0)">15.6" Ноутбук HUAWEI MateBook D
-                                    477sdvsdsgddddddddddddddddddddd</a></td>
-                            <td class="equipment-company">ООО Глагол Нижний Но.dsvsddd</td>
-                            <td class="equipment-type">ПК</td>
-                            <td class="equipment-supplier">ООО «Волга»zzzzzzzzzzzzzzzzzz</td>
-                            <td class="equipment-division">Руководство</td>
-                            <td class="equipment-user">Иванов М. А.</td>
-                            <td class="equipment-number">7947592849759w444434</td>
-                            <td class="equipment-cost">3 000₽</td>
-                            <td class="equipment-analog">Аналог </td>
-                        </tr>
+                        
                         <tr class="equipment_table-tbody-tr">
                             <td class="equipment-check check-box"></td>
                             <td class="equipment-name"><a href="javascript:void(0)">15.6" Ноутбук HUAWEI MateBook D
@@ -343,21 +336,7 @@
                         </tr>
                         <tr class="equipment_table-tbody-tr">
                             <td class="equipment-check check-box"></td>
-                            <td class="equipment-name"><a href="javascript:void(0)">15.6" Ноутбук HUAWEI MateBook D
-                                    477sdvsdddddddddddddd</a></td>
-                            <td class="equipment-company">ООО Глагол Нижний Но.dsvsddd</td>
-                            <td class="equipment-type">ПК</td>
-                            <td class="equipment-supplier">ООО «Волга»zzzzzzzzzzzzzzzzzz</td>
-                            <td class="equipment-division">Руководство</td>
-                            <td class="equipment-user">Иванов М. А.</td>
-                            <td class="equipment-number">7947592849759w444434</td>
-                            <td class="equipment-cost">3 000₽</td>
-                            <td class="equipment-analog">Аналог </td>
-                        </tr>
-                        <tr class="equipment_table-tbody-tr">
-                            <td class="equipment-check check-box"></td>
-                            <td class="equipment-name"><a href="javascript:void(0)">15.6" Ноутбук HUAWEI MateBook D
-                                    477sdvsdddddddddddddd</a></td>
+                            <td class="equipment-name"><a href="javascript:void(0)">Радиомиксер тест</a></td>
                             <td class="equipment-company">ООО Глагол Нижний Но.dsvsddd</td>
                             <td class="equipment-type">ПК</td>
                             <td class="equipment-supplier">ООО «Волга»zzzzzzzzzzzzzzzzzz</td>
@@ -436,7 +415,7 @@
                 </table>
             </div>
             <div class="equipment_table-not-scroll">
-                <table class="comment_table">
+                <table id="com_table" class="comment_table">
                     <thead class="comment_table-thead">
                         <tr class="comment_table-thead-tr">
                             <th class="title-comment-chat"><button class="comment-chat-btn comment-chat-btn-empty"></button>
@@ -445,6 +424,7 @@
                         </tr>
                     </thead>
                     <tbody class="comment_table-tbody">
+                        
                         <tr class="comment_table-tbody-tr">
                             <td class="comment-chat"><button class="comment-chat-btn comment-chat-btn-viewed"></button></td>
                             <td class="comment-settings">
@@ -454,30 +434,15 @@
                                 </div>
                                 <div class="comment-setting-not-config">
                                     <button class="comment-setting-config-btn"></button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="comment_table-tbody-tr">
-                            <td class="comment-chat"><button class="comment-chat-btn comment-chat-btn-viewed"></button></td>
-                            <td class="comment-settings">
-                                <div class="comment-setting-config">
-                                    <button class="comment-setting-ok-btn"></button>
-                                    <button class="comment-setting-trash-btn"></button>
-                                </div>
-                                <div class="comment-setting-not-config">
-                                    <button class="comment-setting-config-btn"></button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="comment_table-tbody-tr">
-                            <td class="comment-chat"><button class="comment-chat-btn comment-chat-btn-viewed"></button></td>
-                            <td class="comment-settings">
-                                <div class="comment-setting-config">
-                                    <button class="comment-setting-ok-btn"></button>
-                                    <button class="comment-setting-trash-btn"></button>
-                                </div>
-                                <div class="comment-setting-not-config">
-                                    <button class="comment-setting-config-btn"></button>
+                                    <ul class="com-set-list">
+                                        <li><a class="com-set-elem" href="javascript:void(0)">Редактировать</a></li>
+                                        <li><a class="com-set-elem" href="javascript:void(0)">Бюджет</a></li>
+                                        <li><a class="com-set-elem" href="javascript:void(0)">Оборудование</a></li>
+                                        <li><a class="com-set-elem" href="javascript:void(0)">ПО</a></li>
+                                        <li><a class="com-set-elem" href="javascript:void(0)">Услуги</a></li>
+                                        <li><a class="com-set-elem" href="javascript:void(0)">Пользователи</a></li>
+                                        <li><a class="com-set-elem" href="javascript:void(0)">Поставщики</a></li>
+                                    </ul>
                                 </div>
                             </td>
                         </tr>
@@ -490,19 +455,15 @@
                                 </div>
                                 <div class="comment-setting-not-config">
                                     <button class="comment-setting-config-btn"></button>
-                                </div>
-                            </td>
-                        </tr>
-                        </tr>
-                        <tr class="comment_table-tbody-tr">
-                            <td class="comment-chat"><button class="comment-chat-btn comment-chat-btn-empty"></button></td>
-                            <td class="comment-settings activ-config">
-                                <div class="comment-setting-config">
-                                    <button class="comment-setting-ok-btn"></button>
-                                    <button class="comment-setting-trash-btn"></button>
-                                </div>
-                                <div class="comment-setting-not-config">
-                                    <button class="comment-setting-config-btn"></button>
+                                    <ul class="com-set-list">
+                                        <li><a class="com-set-elem" href="javascript:void(0)">Редактировать</a></li>
+                                        <li><a class="com-set-elem" href="javascript:void(0)">Бюджет</a></li>
+                                        <li><a class="com-set-elem" href="javascript:void(0)">Оборудование</a></li>
+                                        <li><a class="com-set-elem" href="javascript:void(0)">ПО</a></li>
+                                        <li><a class="com-set-elem" href="javascript:void(0)">Услуги</a></li>
+                                        <li><a class="com-set-elem" href="javascript:void(0)">Пользователи</a></li>
+                                        <li><a class="com-set-elem" href="javascript:void(0)">Поставщики</a></li>
+                                    </ul>
                                 </div>
                             </td>
                         </tr>
@@ -516,6 +477,37 @@
                                 </div>
                                 <div class="comment-setting-not-config">
                                     <button class="comment-setting-config-btn"></button>
+                                    <ul class="com-set-list">
+                                        <li><a class="com-set-elem" href="javascript:void(0)">Редактировать</a></li>
+                                        <li><a class="com-set-elem" href="javascript:void(0)">Бюджет</a></li>
+                                        <li><a class="com-set-elem" href="javascript:void(0)">Оборудование</a></li>
+                                        <li><a class="com-set-elem" href="javascript:void(0)">ПО</a></li>
+                                        <li><a class="com-set-elem" href="javascript:void(0)">Услуги</a></li>
+                                        <li><a class="com-set-elem" href="javascript:void(0)">Пользователи</a></li>
+                                        <li><a class="com-set-elem" href="javascript:void(0)">Поставщики</a></li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        </tr>
+                        <tr class="comment_table-tbody-tr">
+                            <td class="comment-chat"><button class="comment-chat-btn comment-chat-btn-empty"></button></td>
+                            <td class="comment-settings activ-config">
+                                <div class="comment-setting-config">
+                                    <button class="comment-setting-ok-btn"></button>
+                                    <button class="comment-setting-trash-btn"></button>
+                                </div>
+                                <div class="comment-setting-not-config">
+                                    <button class="comment-setting-config-btn"></button>
+                                    <ul class="com-set-list">
+                                        <li><a class="com-set-elem" href="javascript:void(0)">Редактировать</a></li>
+                                        <li><a class="com-set-elem" href="javascript:void(0)">Бюджет</a></li>
+                                        <li><a class="com-set-elem" href="javascript:void(0)">Оборудование</a></li>
+                                        <li><a class="com-set-elem" href="javascript:void(0)">ПО</a></li>
+                                        <li><a class="com-set-elem" href="javascript:void(0)">Услуги</a></li>
+                                        <li><a class="com-set-elem" href="javascript:void(0)">Пользователи</a></li>
+                                        <li><a class="com-set-elem" href="javascript:void(0)">Поставщики</a></li>
+                                    </ul>
                                 </div>
                             </td>
                         </tr>
@@ -528,6 +520,15 @@
                                 </div>
                                 <div class="comment-setting-not-config">
                                     <button class="comment-setting-config-btn"></button>
+                                    <ul class="com-set-list">
+                                        <li><a class="com-set-elem" href="javascript:void(0)">Редактировать</a></li>
+                                        <li><a class="com-set-elem" href="javascript:void(0)">Бюджет</a></li>
+                                        <li><a class="com-set-elem" href="javascript:void(0)">Оборудование</a></li>
+                                        <li><a class="com-set-elem" href="javascript:void(0)">ПО</a></li>
+                                        <li><a class="com-set-elem" href="javascript:void(0)">Услуги</a></li>
+                                        <li><a class="com-set-elem" href="javascript:void(0)">Пользователи</a></li>
+                                        <li><a class="com-set-elem" href="javascript:void(0)">Поставщики</a></li>
+                                    </ul>
                                 </div>
                             </td>
                         </tr>
@@ -541,6 +542,15 @@
                                 </div>
                                 <div class="comment-setting-not-config">
                                     <button class="comment-setting-config-btn"></button>
+                                    <ul class="com-set-list">
+                                        <li><a class="com-set-elem" href="javascript:void(0)">Редактировать</a></li>
+                                        <li><a class="com-set-elem" href="javascript:void(0)">Бюджет</a></li>
+                                        <li><a class="com-set-elem" href="javascript:void(0)">Оборудование</a></li>
+                                        <li><a class="com-set-elem" href="javascript:void(0)">ПО</a></li>
+                                        <li><a class="com-set-elem" href="javascript:void(0)">Услуги</a></li>
+                                        <li><a class="com-set-elem" href="javascript:void(0)">Пользователи</a></li>
+                                        <li><a class="com-set-elem" href="javascript:void(0)">Поставщики</a></li>
+                                    </ul>
                                 </div>
                             </td>
                         </tr>
@@ -554,6 +564,15 @@
                                 </div>
                                 <div class="comment-setting-not-config">
                                     <button class="comment-setting-config-btn"></button>
+                                    <ul class="com-set-list">
+                                        <li><a class="com-set-elem" href="javascript:void(0)">Редактировать</a></li>
+                                        <li><a class="com-set-elem" href="javascript:void(0)">Бюджет</a></li>
+                                        <li><a class="com-set-elem" href="javascript:void(0)">Оборудование</a></li>
+                                        <li><a class="com-set-elem" href="javascript:void(0)">ПО</a></li>
+                                        <li><a class="com-set-elem" href="javascript:void(0)">Услуги</a></li>
+                                        <li><a class="com-set-elem" href="javascript:void(0)">Пользователи</a></li>
+                                        <li><a class="com-set-elem" href="javascript:void(0)">Поставщики</a></li>
+                                    </ul>
                                 </div>
                             </td>
                         </tr>
@@ -567,6 +586,15 @@
                                 </div>
                                 <div class="comment-setting-not-config">
                                     <button class="comment-setting-config-btn"></button>
+                                    <ul class="com-set-list">
+                                        <li><a class="com-set-elem" href="javascript:void(0)">Редактировать</a></li>
+                                        <li><a class="com-set-elem" href="javascript:void(0)">Бюджет</a></li>
+                                        <li><a class="com-set-elem" href="javascript:void(0)">Оборудование</a></li>
+                                        <li><a class="com-set-elem" href="javascript:void(0)">ПО</a></li>
+                                        <li><a class="com-set-elem" href="javascript:void(0)">Услуги</a></li>
+                                        <li><a class="com-set-elem" href="javascript:void(0)">Пользователи</a></li>
+                                        <li><a class="com-set-elem" href="javascript:void(0)">Поставщики</a></li>
+                                    </ul>
                                 </div>
                             </td>
                         </tr>
@@ -575,7 +603,7 @@
             </div>
         </section>
 
-        <section class="popap_comment-wrap popap-overlay--js">
+        <section class="popap_comment-wrap">
             <div class="popap_comment">
                 <div class="popap_comment-title">
                     <h4>Комментарии к Adobe Illustrator 2022</h4>
@@ -670,7 +698,7 @@
             </div>
         </section>
 
-        <section class="popap-delete-wrap popap-overlay--js">
+        <section class="popap-delete-wrap">
             <div class="popap-delete">
                 <div class="popap-delete-title">
                     <h2>Удалить элемент?</h2>
@@ -731,6 +759,38 @@
         
         <div class="popap-overlay popap-overlay--js"></div>
         
+        
+        <div class="modal-person">
+            <ul class="modal-person-list">
+                <li class="modal-personal-title">Иванов М. А.</li>
+                <li><a class="modal-personal-elem" href="javascript:void(0)">Личный кабинет</a></li> 
+                <li><a class="modal-personal-elem" href="javascript:void(0)">Безопасность</a></li> 
+                <li><a class="modal-personal-elem" href="javascript:void(0)">Выйти </a></li> 
+            </ul>
+        </div>
+
+        <div class="modal-vis-pages">
+            <ul class="modal-vis-pages-list">
+                <li class="modal-vis-pages-title">Отображать по:</li>
+                <li><a class="modal-vis-pages-elem" href="javascript:void(0)">10</a></li> 
+                <li><a class="modal-vis-pages-elem" href="javascript:void(0)">20</a></li> 
+                <li><a class="modal-vis-pages-elem" href="javascript:void(0)">30 </a></li> 
+            </ul>
+        </div>
+
+        <div class="modal-com-set">
+            <ul class="modal-com-set-list">
+                <li class="modal-com-set-title"> ООО Глагол Нижний Новгород hhfdskjdnvskjdncls.</li>
+                <li><a class="modal-com-set-elem" href="javascript:void(0)">Редактировать</a></li>
+                <li><a class="modal-com-set-elem" href="javascript:void(0)">Бюджет</a></li>
+                <li><a class="modal-com-set-elem" href="javascript:void(0)">Оборудование</a></li>
+                <li><a class="modal-com-set-elem" href="javascript:void(0)">ПО</a></li>
+                <li><a class="modal-com-set-elem" href="javascript:void(0)">Услуги</a></li>
+                <li><a class="modal-com-set-elem" href="javascript:void(0)">Пользователи</a></li>
+                <li><a class="modal-com-set-elem" href="javascript:void(0)">Поставщики</a></li>
+            </ul>
+        </div>
+
     </main>
 
 

@@ -269,6 +269,7 @@ aside {
     padding: 40px 48px;
 }
 .personal{
+    position: relative;
     display: flex;
     justify-content: end;
 }
@@ -300,6 +301,105 @@ aside {
 
 .personal-link-aside{
     display: none;
+}
+
+.personal_drop-down{
+    display: none;
+    position: absolute;
+    right: 48px;
+    top: -50px;
+    width: 144px;
+    border-radius: 8px;
+    box-shadow: rgba(10, 22, 58, 0.1) 0 4px 10px;
+    z-index: 3;
+    background-color: var(--white);
+    overflow: hidden;
+}
+.com-set-list{
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 15px;
+    width: 136px;
+    border-radius: 8px;
+    box-shadow: rgba(10, 22, 58, 0.1) 0 4px 10px;
+    z-index: 3;
+    background-color: var(--white);
+    overflow: hidden;
+}
+.personal_drop-down-elem,
+.com-set-elem{
+    display: block;
+    width: 100%;
+    height: 40px;
+    padding-left: 16px;
+    display: flex;
+    align-items: center;
+    font-weight: 300;
+    font-size: 14px;
+}
+.com-set-elem:hover,
+.com-set-elem:active,
+.personal_drop-down-elem:hover,
+.personal_drop-down-elem:active{
+    background-color: var(--gray-background);
+}
+
+.modal-vis-pages,
+.modal-com-set,
+.modal-person{
+    display: none;
+    position: fixed;
+    top: 0px;
+    left: 0;
+    background-color: var(--main-popap);
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.modal-vis-pages-list,
+.modal-com-set-list,
+.modal-person-list{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    width: 336px;
+}
+.modal-vis-pages-title,
+.modal-com-set-title,
+.modal-personal-title{
+    background-color: var(--black);
+    color: var(--white);
+    align-items: center;
+    height: 64px;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 25px 32px; 
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.modal-vis-pages-elem,
+.modal-com-set-elem,
+.modal-personal-elem{
+    display: flex;
+    align-items: center;
+    height: 55px;
+    padding-left: 32px;
+    border-top: 1px solid var(--gray-background);
+}
+.modal-vis-pages-elem:hover,
+.modal-vis-pages-elem:active,
+.modal-com-set-elem:hover,
+.modal-com-set-elem:active,
+.modal-personal-elem:hover,
+.modal-personal-elem:active{
+    background-color: var(--gray-background);
 }
 
 /*-----------------end HEADER------------------*/
@@ -464,7 +564,6 @@ h1 {
 .form_search-inp {
     padding-left: 44px;
     height: 40px;
-    color: var(--inactive-gray);
     width: 100%;
     border-radius: 8px;
     border: 1px solid var(--inactive-gray);
@@ -724,6 +823,16 @@ h1 {
 
 .comment-setting-config {
     display: none;
+}
+
+.comment-setting-not-config{
+    position: relative;
+}
+.com-set-list{
+    position: absolute;
+    right: 0;
+    background-color: var(--white);
+    z-index: 2;
 }
 
 .activ-config .comment-setting-config {
